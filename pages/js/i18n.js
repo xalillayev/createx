@@ -885,7 +885,7 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: 'ANY QUESTIONS?',
+		anyQuestions: 'ANY QUESTIONS',
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
@@ -1384,14 +1384,14 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: 'ANY QUESTIONS?',
+		anyQuestions: "ewf",
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
 		phoneNumber: 'Your phone number',
 		yourMessage: 'Your message',
-		newsletterAgreement:
-			'I agree to receive communications from Createx Online School',
+		newsletterAgreement: "Я соглашаюсь получать сообщения от онлайн-школы Createx",
+			
 		sendMessage: 'Send message',
 		// COURSE DETAILS PAGE
 		courseLabel: 'КУРС',
