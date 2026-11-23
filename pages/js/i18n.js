@@ -1,5 +1,6 @@
 const translations = {
 	uz: {
+		all: "Barchasi",
 		readyToLearn: 'O‘QISH JARAYONIDAN ZAVQLANING!',
 		featuredCourses: 'Bizning onlayn kurslarimiz',
 		searchCourse: 'Kursni qidirish...',
@@ -543,6 +544,7 @@ const translations = {
 	},
 
 	en: {
+		all: "all",
 		readyToLearn: 'ENJOY YOUR STUDYING!',
 		featuredCourses: 'Our online courses',
 		searchCourse: 'Search course...',
@@ -1052,6 +1054,7 @@ const translations = {
 	},
 
 	ru: {
+		all: "Все",
 		readyToLearn: 'НАСЛАЖДАЙТЕСЬ ОБУЧЕНИЕМ!',
 		featuredCourses: 'Наши онлайн-курсы',
 		searchCourse: 'Поиск курса...',

@@ -183,16 +183,15 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 // registr js
+const modal = document.createElement('div');
 
-const modal = document.createElement('div')
-
-modal.id = 'authModal'
+modal.id = 'authModal';
 
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`
+`;
 
 modal.innerHTML = `
     <div id="modalBox"
@@ -232,7 +231,7 @@ modal.innerHTML = `
                         Full Name
                     </label>
 
-                    <input id="fullName"
+                    <input required id="fullName"
                         type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
@@ -245,7 +244,7 @@ modal.innerHTML = `
                         Email
                     </label>
 
-                    <input id="email"
+                    <input required id="email"
                         type="email"
                         data-placeholder="yourWorkingEmail"
                         placeholder="Your working email"
@@ -259,7 +258,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="password"
+                        <input required id="password"
                             type="password"
                             data-placeholder="passwordPlaceholder"
                             placeholder="Password"
@@ -274,7 +273,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="confirmPassword"
+                        <input required id="confirmPassword"
                             type="password"
                             data-placeholder="confirmPasswordPlaceholder"
                             placeholder="Confirm password"
@@ -286,7 +285,7 @@ modal.innerHTML = `
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input type="checkbox" class="accent-[#ff3f22]">
+                        <input required type="checkbox" class="accent-[#ff3f22]">
                         <span data-key="keepSignedIn">Keep me signed in</span>
                     </label>
 
@@ -359,109 +358,135 @@ modal.innerHTML = `
         </div>
 
     </div>
-`
+`;
 
-document.body.appendChild(modal)
+document.body.appendChild(modal);
+
 
 // ELEMENTLAR
-const closeModal = document.getElementById('closeModal')
-const formTitle = document.getElementById('formTitle')
-const formDescription = document.getElementById('formDescription')
-const authForm = document.getElementById('authForm')
-const nameBox = document.getElementById('nameBox')
-const confirmBox = document.getElementById('confirmBox')
-const fullName = document.getElementById('fullName')
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
-const rememberBox = document.getElementById('rememberBox')
-const submitBtn = document.getElementById('submitBtn')
-const switchText = document.getElementById('switchText')
-const switchBtn = document.getElementById('switchBtn')
-const message = document.getElementById('message')
+const closeModal = document.getElementById('closeModal');
+const formTitle = document.getElementById('formTitle');
+const formDescription = document.getElementById('formDescription');
+const authForm = document.getElementById('authForm');
+const nameBox = document.getElementById('nameBox');
+const confirmBox = document.getElementById('confirmBox');
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
+const rememberBox = document.getElementById('rememberBox');
+const submitBtn = document.getElementById('submitBtn');
+const switchText = document.getElementById('switchText');
+const switchBtn = document.getElementById('switchBtn');
+const message = document.getElementById('message');
+
 
 // TARJIMA FUNKSIYASI
 function translateAuthModal() {
-	document.querySelectorAll('#authModal [data-key]').forEach(element => {
-		const key = element.dataset.key
 
-		if (translations[language]?.[key]) {
-			element.textContent = translations[language][key]
-		}
-	})
+    document.querySelectorAll('#authModal [data-key]').forEach(element => {
 
-	document
-		.querySelectorAll('#authModal [data-placeholder]')
-		.forEach(element => {
-			const key = element.dataset.placeholder
+        const key = element.dataset.key;
 
-			if (translations[language]?.[key]) {
-				element.placeholder = translations[language][key]
-			}
-		})
+        if (translations[language]?.[key]) {
+            element.textContent = translations[language][key];
+        }
+
+    });
+
+    document.querySelectorAll('#authModal [data-placeholder]').forEach(element => {
+
+        const key = element.dataset.placeholder;
+
+        if (translations[language]?.[key]) {
+            element.placeholder = translations[language][key];
+        }
+
+    });
+
 }
 
+const authModal = document.getElementById("authModal");
+
+authModal.addEventListener("click", (e) => {
+    if (e.target === authModal) {
+        authModal.classList.add("hidden");
+    }
+});
+
 // MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn')
+const loginBtns = document.querySelectorAll('.loginBtn');
 
 loginBtns.forEach(button => {
-	button.addEventListener('click', function () {
-		modal.classList.remove('hidden')
-		modal.classList.add('flex')
 
-		mobileMenu.classList.add('hidden')
-		menuBtn.classList.remove('hidden')
-		closeBtn.classList.add('hidden')
+    button.addEventListener('click', function () {
 
-		translateAuthModal()
-	})
-})
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        mobileMenu.classList.add('hidden');
+        menuBtn.classList.remove('hidden');
+        closeBtn.classList.add('hidden');
+
+        translateAuthModal();
+
+    });
+
+});
+
 
 // MODAL YOPILISHI
 function closeAuthModal() {
-	modal.classList.add('hidden')
-	modal.classList.remove('flex')
 
-	message.textContent = ''
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+
+    message.textContent = '';
+
 }
 
-closeModal.addEventListener('click', closeAuthModal)
+closeModal.addEventListener('click', closeAuthModal);
+
 
 // SIGN IN / SIGN UP
-let isSignUp = false
+let isSignUp = false;
 
 function updateAuthMode() {
-	message.textContent = ''
 
-	if (isSignUp) {
-		nameBox.classList.remove('hidden')
-		confirmBox.classList.remove('hidden')
+    message.textContent = '';
 
-		fullName.required = true
-		confirmPassword.required = true
+    if (isSignUp) {
 
-		rememberBox.innerHTML = `
+        nameBox.classList.remove('hidden');
+        confirmBox.classList.remove('hidden');
+
+        fullName.required = true;
+        confirmPassword.required = true;
+
+        rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
-        `
+        `;
 
-		formTitle.dataset.key = 'signUp'
-		formDescription.dataset.key = 'signUpDescription'
-		submitBtn.dataset.key = 'signUp'
-		switchText.dataset.key = 'haveAccount'
-		switchBtn.dataset.key = 'signIn'
-	} else {
-		nameBox.classList.add('hidden')
-		confirmBox.classList.add('hidden')
+        formTitle.dataset.key = 'signUp';
+        formDescription.dataset.key = 'signUpDescription';
+        submitBtn.dataset.key = 'signUp';
+        switchText.dataset.key = 'haveAccount';
+        switchBtn.dataset.key = 'signIn';
 
-		fullName.required = false
-		confirmPassword.required = false
+    } else {
 
-		rememberBox.innerHTML = `
+        nameBox.classList.add('hidden');
+        confirmBox.classList.add('hidden');
+
+        fullName.required = false;
+        confirmPassword.required = false;
+
+        rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
 
@@ -469,29 +494,37 @@ function updateAuthMode() {
                 class="text-[#ff3f22] hover:underline text-xs"
                 data-key="forgotPassword">
             </button>
-        `
+        `;
 
-		formTitle.dataset.key = 'signIn'
-		formDescription.dataset.key = 'signInDescription'
-		submitBtn.dataset.key = 'signIn'
-		switchText.dataset.key = 'noAccount'
-		switchBtn.dataset.key = 'signUp'
-	}
+        formTitle.dataset.key = 'signIn';
+        formDescription.dataset.key = 'signInDescription';
+        submitBtn.dataset.key = 'signIn';
+        switchText.dataset.key = 'noAccount';
+        switchBtn.dataset.key = 'signUp';
 
-	translateAuthModal()
+    }
+
+    translateAuthModal();
+
 }
 
 switchBtn.addEventListener('click', function () {
-	isSignUp = !isSignUp
 
-	updateAuthMode()
-})
+    isSignUp = !isSignUp;
+
+    updateAuthMode();
+
+});
+
 
 // TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('language')
+const languageSelect = document.getElementById('language');
 
 if (languageSelect) {
-	languageSelect.addEventListener('change', function () {
-		translateAuthModal()
-	})
+
+    languageSelect.addEventListener('change', function () {
+        translateAuthModal();
+    });
+
 }
+

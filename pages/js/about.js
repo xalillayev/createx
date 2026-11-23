@@ -244,6 +244,13 @@ function translateAuthModal() {
 
 }
 
+const authModal = document.getElementById("authModal");
+
+authModal.addEventListener("click", (e) => {
+    if (e.target === authModal) {
+        authModal.classList.add("hidden");
+    }
+});
 
 // MODAL OCHILISHI
 const loginBtns = document.querySelectorAll('.loginBtn');
