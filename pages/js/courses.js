@@ -1,203 +1,198 @@
-const menuBtn = document.querySelector('#menuBtn');
-const closeBtn = document.querySelector('#closeBtn');
-const mobileMenu = document.querySelector('#mobileMenu');
+const menuBtn = document.querySelector('#menuBtn')
+const closeBtn = document.querySelector('#closeBtn')
+const mobileMenu = document.querySelector('#mobileMenu')
 
 // Menu ochish
 menuBtn.addEventListener('click', function () {
-    mobileMenu.classList.remove('hidden');
+	mobileMenu.classList.remove('hidden')
 
-    menuBtn.classList.add('hidden');
-    closeBtn.classList.remove('hidden');
-});
+	menuBtn.classList.add('hidden')
+	closeBtn.classList.remove('hidden')
+})
 
 // Menu yopish
 closeBtn.addEventListener('click', function () {
-    mobileMenu.classList.add('hidden');
+	mobileMenu.classList.add('hidden')
 
-    closeBtn.classList.add('hidden');
-    menuBtn.classList.remove('hidden');
-});
+	closeBtn.classList.add('hidden')
+	menuBtn.classList.remove('hidden')
+})
 
 // filter js
 
-
 const categories = [
-    { id: 1, title: "All", categoryKey: "all" },
-    { id: 2, title: "Marketing", categoryKey: "marketing" },
-    { id: 3, title: "Management", categoryKey: "management" },
-    { id: 4, title: "HR & Recruiting", categoryKey: "hr" },
-    { id: 5, title: "Design", categoryKey: "design" },
-    { id: 6, title: "Development", categoryKey: "development" },
-];
+	{ id: 1, title: 'All', categoryKey: 'all' },
+	{ id: 2, title: 'Marketing', categoryKey: 'marketing' },
+	{ id: 3, title: 'Management', categoryKey: 'management' },
+	{ id: 4, title: 'HR & Recruiting', categoryKey: 'hr' },
+	{ id: 5, title: 'Design', categoryKey: 'design' },
+	{ id: 6, title: 'Development', categoryKey: 'development' },
+]
 
 const courses = [
-    {
-        id: 1,
-        title: "The Ultimate Google Ads Training Course",
-        category: "marketing",
-        price: 100,
-        author: "Jerome Bell",
-        image: "pages/pages/image/image1.png",
-    },
-    {
-        id: 2,
-        title: "Product Management Fundamentals",
-        category: "management",
-        price: 480,
-        author: "Marvin McKinney",
-        image: "pages/pages/image/image2.png",
-    },
-    {
-        id: 3,
-        title: "HR Management and Analytics",
-        category: "hr",
-        price: 200,
-        author: "Leslie Alexander Li",
-        image: "pages/pages/image/image3.png",
-    },
-    {
-        id: 4,
-        title: "Brand Management & PR Communications",
-        category: "marketing",
-        price: 530,
-        author: "Kristin Watson",
-        image: "pages/pages/image/image4.png",
-    },
-    {
-        id: 5,
-        title: "Graphic Design Basic",
-        category: "design",
-        price: 500,
-        author: "Guy Hawkins",
-        image: "pages/pages/image/image5.png",
-    },
-    {
-        id: 6,
-        title: "Business Development Management",
-        category: "management",
-        price: 400,
-        author: "Dianne Russell",
-        image: "pages/pages/image/image6.png",
-    },
-    {
-        id: 7,
-        title: "Highload Software Architecture",
-        category: "development",
-        price: 600,
-        author: "Brooklyn Simmons",
-        image: "pages/pages/image/image4.png",
-    },
-    {
-        id: 8,
-        title: "Human Resources - Selection and Recruitment",
-        category: "hr",
-        price: 150,
-        author: "Kathryn Murphy",
-        image: "pages/pages/image/image5.png",
-    },
-    {
-        id: 9,
-        title: "User Experience. Human-centered Design",
-        category: "design",
-        price: 240,
-        author: "Cody Fisher",
-        image: "pages/pages/image/image6.png",
-    },
-];
+	{
+		id: 1,
+		title: 'The Ultimate Google Ads Training Course',
+		category: 'marketing',
+		price: 100,
+		author: 'Jerome Bell',
+		image: 'pages/pages/image/image1.png',
+	},
+	{
+		id: 2,
+		title: 'Product Management Fundamentals',
+		category: 'management',
+		price: 480,
+		author: 'Marvin McKinney',
+		image: 'pages/pages/image/image2.png',
+	},
+	{
+		id: 3,
+		title: 'HR Management and Analytics',
+		category: 'hr',
+		price: 200,
+		author: 'Leslie Alexander Li',
+		image: 'pages/pages/image/image3.png',
+	},
+	{
+		id: 4,
+		title: 'Brand Management & PR Communications',
+		category: 'marketing',
+		price: 530,
+		author: 'Kristin Watson',
+		image: 'pages/pages/image/image4.png',
+	},
+	{
+		id: 5,
+		title: 'Graphic Design Basic',
+		category: 'design',
+		price: 500,
+		author: 'Guy Hawkins',
+		image: 'pages/pages/image/image5.png',
+	},
+	{
+		id: 6,
+		title: 'Business Development Management',
+		category: 'management',
+		price: 400,
+		author: 'Dianne Russell',
+		image: 'pages/pages/image/image6.png',
+	},
+	{
+		id: 7,
+		title: 'Highload Software Architecture',
+		category: 'development',
+		price: 600,
+		author: 'Brooklyn Simmons',
+		image: 'pages/pages/image/image4.png',
+	},
+	{
+		id: 8,
+		title: 'Human Resources - Selection and Recruitment',
+		category: 'hr',
+		price: 150,
+		author: 'Kathryn Murphy',
+		image: 'pages/pages/image/image5.png',
+	},
+	{
+		id: 9,
+		title: 'User Experience. Human-centered Design',
+		category: 'design',
+		price: 240,
+		author: 'Cody Fisher',
+		image: 'pages/pages/image/image6.png',
+	},
+]
 
-let filterButtons = document.querySelector("#filterButtons");
-let box = document.querySelector("#box");
+let filterButtons = document.querySelector('#filterButtons')
+let box = document.querySelector('#box')
 
-let selectedCategory = "all";
+let selectedCategory = 'all'
 
+categories.forEach(category => {
+	let categoryItem = document.createElement('button')
 
-categories.forEach((category) => {
-    let categoryItem = document.createElement("button");
+	categoryItem.dataset.key = `cat_${category.categoryKey}`
+	categoryItem.textContent = category.title
 
-    categoryItem.textContent = category.title;
-
-    categoryItem.className = `
+	categoryItem.className = `
     px-3 py-2 text-xs text-white
     border-2 border-[#FF5753]
     bg-[#FF5753]
     transition duration-300
     hover:bg-transparent
     hover:text-[#FF5753]
-`;
+`
 
-    categoryItem.onclick = () => {
-        handleChangeCategory(category.categoryKey);
-    };
+	categoryItem.onclick = () => {
+		handleChangeCategory(category.categoryKey)
+	}
 
-    filterButtons.append(categoryItem);
-});
+	filterButtons.append(categoryItem)
+})
 
-// 
+//
 
 function renderWorkers() {
-    box.innerHTML = "";
+	box.innerHTML = ''
 
-    const filteredCourses = courses.filter((course) => {
-        return selectedCategory === "all" ||
-            course.category === selectedCategory;
-    });
+	const filteredCourses = courses.filter(course => {
+		return selectedCategory === 'all' || course.category === selectedCategory
+	})
 
-    filteredCourses.forEach((course) => {
-        let courseItem = document.createElement("div");
+	filteredCourses.forEach(course => {
+		let courseItem = document.createElement('div')
 
-        courseItem.className = `
+		courseItem.className = `
             bg-white shadow-md overflow-hidden
             hover:shadow-xl transition
-        `;
+        `
 
-        courseItem.innerHTML = `
+		courseItem.innerHTML = `
             <div class="h-[180px] bg-[#ffcf32] flex items-center justify-center">
                 <img src="${course.image}" class="h-full object-contain">
             </div>
 
             <div class="p-4">
-                <span class="text-xs text-white bg-[#03cea4] px-2 py-1">
+                <span data-key="cat_${course.category}" class="text-xs text-white bg-[#03cea4] px-2 py-1">
                     ${course.category}
                 </span>
 
-                <h3 class="font-bold text-sm mt-3 mb-2">
+                <h3 data-key="course_${course.id}" class="font-bold text-sm mt-3 mb-2">
                     ${course.title}
                 </h3>
 
                 <p class="text-xs text-gray-500">
                     <span class="text-[#ff4242]">$${course.price}</span>
-                    | by ${course.author}
+                    | <span data-key="byAuthor">by</span> ${course.author}
                 </p>
             </div>
-        `;
+        `
 
-        box.append(courseItem);
-    });
+		box.append(courseItem)
+	})
 }
 
 function handleChangeCategory(category) {
-    selectedCategory = category;
-    renderWorkers();
+	selectedCategory = category
+	renderWorkers()
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    renderWorkers();
-});
-
-
+window.addEventListener('DOMContentLoaded', () => {
+	renderWorkers()
+})
 
 // registr js
 
+const modal = document.createElement('div')
 
-const modal = document.createElement('div');
-
-modal.id = 'authModal';
+modal.id = 'authModal'
 
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`;
+`
 
 modal.innerHTML = `
     <div id="modalBox"
@@ -364,125 +359,107 @@ modal.innerHTML = `
         </div>
 
     </div>
-`;
+`
 
-document.body.appendChild(modal);
-
+document.body.appendChild(modal)
 
 // ELEMENTLAR
-const closeModal = document.getElementById('closeModal');
-const formTitle = document.getElementById('formTitle');
-const formDescription = document.getElementById('formDescription');
-const authForm = document.getElementById('authForm');
-const nameBox = document.getElementById('nameBox');
-const confirmBox = document.getElementById('confirmBox');
-const fullName = document.getElementById('fullName');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirmPassword');
-const rememberBox = document.getElementById('rememberBox');
-const submitBtn = document.getElementById('submitBtn');
-const switchText = document.getElementById('switchText');
-const switchBtn = document.getElementById('switchBtn');
-const message = document.getElementById('message');
-
+const closeModal = document.getElementById('closeModal')
+const formTitle = document.getElementById('formTitle')
+const formDescription = document.getElementById('formDescription')
+const authForm = document.getElementById('authForm')
+const nameBox = document.getElementById('nameBox')
+const confirmBox = document.getElementById('confirmBox')
+const fullName = document.getElementById('fullName')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const confirmPassword = document.getElementById('confirmPassword')
+const rememberBox = document.getElementById('rememberBox')
+const submitBtn = document.getElementById('submitBtn')
+const switchText = document.getElementById('switchText')
+const switchBtn = document.getElementById('switchBtn')
+const message = document.getElementById('message')
 
 // TARJIMA FUNKSIYASI
 function translateAuthModal() {
+	document.querySelectorAll('#authModal [data-key]').forEach(element => {
+		const key = element.dataset.key
 
-    document.querySelectorAll('#authModal [data-key]').forEach(element => {
+		if (translations[language]?.[key]) {
+			element.textContent = translations[language][key]
+		}
+	})
 
-        const key = element.dataset.key;
+	document
+		.querySelectorAll('#authModal [data-placeholder]')
+		.forEach(element => {
+			const key = element.dataset.placeholder
 
-        if (translations[language]?.[key]) {
-            element.textContent = translations[language][key];
-        }
-
-    });
-
-    document.querySelectorAll('#authModal [data-placeholder]').forEach(element => {
-
-        const key = element.dataset.placeholder;
-
-        if (translations[language]?.[key]) {
-            element.placeholder = translations[language][key];
-        }
-
-    });
-
+			if (translations[language]?.[key]) {
+				element.placeholder = translations[language][key]
+			}
+		})
 }
 
-
 // MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn');
+const loginBtns = document.querySelectorAll('.loginBtn')
 
 loginBtns.forEach(button => {
+	button.addEventListener('click', function () {
+		modal.classList.remove('hidden')
+		modal.classList.add('flex')
 
-    button.addEventListener('click', function () {
+		mobileMenu.classList.add('hidden')
+		menuBtn.classList.remove('hidden')
+		closeBtn.classList.add('hidden')
 
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-
-        mobileMenu.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-        closeBtn.classList.add('hidden');
-
-        translateAuthModal();
-
-    });
-
-});
-
+		translateAuthModal()
+	})
+})
 
 // MODAL YOPILISHI
 function closeAuthModal() {
+	modal.classList.add('hidden')
+	modal.classList.remove('flex')
 
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-
-    message.textContent = '';
-
+	message.textContent = ''
 }
 
-closeModal.addEventListener('click', closeAuthModal);
+closeModal.addEventListener('click', closeAuthModal)
 
 // SIGN IN / SIGN UP
-let isSignUp = false;
+let isSignUp = false
 
 function updateAuthMode() {
+	message.textContent = ''
 
-    message.textContent = '';
+	if (isSignUp) {
+		nameBox.classList.remove('hidden')
+		confirmBox.classList.remove('hidden')
 
-    if (isSignUp) {
+		fullName.required = true
+		confirmPassword.required = true
 
-        nameBox.classList.remove('hidden');
-        confirmBox.classList.remove('hidden');
-
-        fullName.required = true;
-        confirmPassword.required = true;
-
-        rememberBox.innerHTML = `
+		rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
                 <input type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
-        `;
+        `
 
-        formTitle.dataset.key = 'signUp';
-        formDescription.dataset.key = 'signUpDescription';
-        submitBtn.dataset.key = 'signUp';
-        switchText.dataset.key = 'haveAccount';
-        switchBtn.dataset.key = 'signIn';
+		formTitle.dataset.key = 'signUp'
+		formDescription.dataset.key = 'signUpDescription'
+		submitBtn.dataset.key = 'signUp'
+		switchText.dataset.key = 'haveAccount'
+		switchBtn.dataset.key = 'signIn'
+	} else {
+		nameBox.classList.add('hidden')
+		confirmBox.classList.add('hidden')
 
-    } else {
+		fullName.required = false
+		confirmPassword.required = false
 
-        nameBox.classList.add('hidden');
-        confirmBox.classList.add('hidden');
-
-        fullName.required = false;
-        confirmPassword.required = false;
-
-        rememberBox.innerHTML = `
+		rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
                 <input type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
@@ -492,36 +469,29 @@ function updateAuthMode() {
                 class="text-[#ff3f22] hover:underline text-xs"
                 data-key="forgotPassword">
             </button>
-        `;
+        `
 
-        formTitle.dataset.key = 'signIn';
-        formDescription.dataset.key = 'signInDescription';
-        submitBtn.dataset.key = 'signIn';
-        switchText.dataset.key = 'noAccount';
-        switchBtn.dataset.key = 'signUp';
+		formTitle.dataset.key = 'signIn'
+		formDescription.dataset.key = 'signInDescription'
+		submitBtn.dataset.key = 'signIn'
+		switchText.dataset.key = 'noAccount'
+		switchBtn.dataset.key = 'signUp'
+	}
 
-    }
-
-    translateAuthModal();
-
+	translateAuthModal()
 }
 
 switchBtn.addEventListener('click', function () {
+	isSignUp = !isSignUp
 
-    isSignUp = !isSignUp;
-
-    updateAuthMode();
-
-});
-
+	updateAuthMode()
+})
 
 // TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('language');
+const languageSelect = document.getElementById('language')
 
 if (languageSelect) {
-
-    languageSelect.addEventListener('change', function () {
-        translateAuthModal();
-    });
-
+	languageSelect.addEventListener('change', function () {
+		translateAuthModal()
+	})
 }
