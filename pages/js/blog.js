@@ -19,6 +19,263 @@ closeBtn.addEventListener('click', function () {
 });
 
 
+
+const blogPosts = [
+    {
+        type: "podcast",
+        category: "Marketing",
+        date: "September 4, 2020",
+        duration: "36 min",
+        title: "What is traffic arbitrage and does it really make money?",
+        description: "Pharetra, ullamcorper iaculis viverra parturient sed id sed. Consequat proin dignissim lacus, purus gravida...",
+        action: "Listen",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "article",
+        category: "Development",
+        date: "September 1, 2020",
+        duration: "",
+        title: "How to choose the first programming language for a beginner",
+        description: "Turpis sed at magna laoreet gravida consequat tortor placerat. Gravida vitae aliquet enim egestas dui...",
+        action: "Read",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "video",
+        category: "Design",
+        date: "August 8, 2020",
+        duration: "40 min",
+        title: "Should you choose a creative profession if you are attracted to creativity?",
+        description: "Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...",
+        action: "Watch",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "article",
+        category: "HR & Recruiting",
+        date: "August 3, 2020",
+        duration: "",
+        title: "HR statistics: job search, interviews, hiring and recruiting",
+        description: "Massa, lectus nibh consectetur aliquet nunc risus aenean. Leo hac netus bibendum diam adipiscing aenean nisl...",
+        action: "Read",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "video",
+        category: "Management",
+        date: "August 2, 2020",
+        duration: "45 min",
+        title: "What to do and who to talk to if you want to get feedback on the product",
+        description: "Neque, a senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...",
+        action: "Watch",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "podcast",
+        category: "Design",
+        date: "July 28, 2020",
+        duration: "36 min",
+        title: "What are color profiles and how they work in graphic design",
+        description: "Aliquam vulputate hendrerit quam sollicitudin urna enim viverra gravida. Consectetur urna arcu eleifend...",
+        action: "Listen",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "video",
+        category: "Management",
+        date: "July 15, 2020",
+        duration: "45 min",
+        title: "Startup: how to build a team that will live longer than a year",
+        description: "Nisi, massa ut sit faucibus. Faucibus at malesuada at justo scelerisque in nisi, urna...",
+        action: "Watch",
+        image: "/pages/pages/image/image.png"
+    },
+    {
+        type: "article",
+        category: "Marketing",
+        date: "July 9, 2020",
+        duration: "",
+        title: "How to get customers to love your business from the start",
+        description: "Malesuada in augue mi feugiat morbi a aliquet enim. Elementum lacus, pellentesque etiam arcu tristique...",
+        action: "Read",
+        image: "/pages/pages/image/image.png"
+    }
+];
+
+// ELEMENTS
+const blogGrid = document.getElementById("blogGrid");
+const blogSearch = document.getElementById("blogSearch");
+const blogCategory = document.getElementById("blogCategory");
+const blogPagination = document.getElementById("blogPagination");
+const noBlogResults = document.getElementById("noBlogResults");
+
+const blogTabs = document.querySelectorAll(".blog-tab");
+
+// SETTINGS
+let activeType = "all";
+let currentPage = 1;
+
+const postsPerPage = 8;
+
+// ICONS
+const typeIcons = {
+    article: "article",
+    video: "play_circle",
+    podcast: "mic"
+};
+
+// FILTER
+function getFilteredPosts() {
+    const searchValue = blogSearch.value.toLowerCase().trim();
+    const categoryValue = blogCategory.value;
+
+    return blogPosts.filter(post => {
+        const matchesType =
+            activeType === "all" || post.type === activeType;
+
+        const matchesCategory =
+            categoryValue === "all" ||
+            post.category === categoryValue;
+
+        const matchesSearch =
+            post.title.toLowerCase().includes(searchValue) ||
+            post.description.toLowerCase().includes(searchValue) ||
+            post.category.toLowerCase().includes(searchValue);
+
+        return matchesType && matchesCategory && matchesSearch;
+    });
+}
+
+// RENDER BLOG CARD
+function createBlogCard(post, index) {
+    const card = document.createElement("article");
+
+    card.className = `blog-card ${index === 3 || index === 4 ? "wide" : ""}`;
+
+    card.innerHTML = `
+        <div class="relative overflow-hidden rounded-sm">
+
+            <img
+                src="${post.image}"
+                alt="${post.title}"
+                class="blog-image transition duration-500 hover:scale-105"
+                loading="lazy"
+            >
+
+            <span class="absolute top-2 left-2 bg-white text-gray-600
+                text-[9px] px-2 py-1 rounded-sm flex items-center gap-1">
+
+                <span class="material-symbols-outlined text-[12px]">
+                    ${typeIcons[post.type]}
+                </span>
+
+                ${post.type.charAt(0).toUpperCase() + post.type.slice(1)}
+
+            </span>
+
+        </div>
+
+        <div class="blog-card-content">
+
+            <div class="blog-meta">
+
+                <span>${post.category}</span>
+
+                <span>|</span>
+
+                <span class="material-symbols-outlined">calendar_today</span>
+
+                <span>${post.date}</span>
+
+                ${post.duration
+            ? `
+                        <span>|</span>
+                        <span class="material-symbols-outlined">schedule</span>
+                        <span>${post.duration}</span>
+                    `
+            : ""
+        }
+
+            </div>
+
+            <h3 class="blog-card-title">
+                ${post.title}
+            </h3>
+
+            <p class="blog-description">
+                ${post.description}
+            </p>
+
+            <a href="#" class="blog-action">
+
+                ${post.action}
+
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+
+            </a>
+
+        </div>
+    `;
+
+    return card;
+}
+
+
+// MAIN RENDER
+function renderBlogs() {
+    const filteredPosts = getFilteredPosts();
+
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+    if (currentPage > totalPages) {
+        currentPage = Math.max(1, totalPages);
+    }
+
+    const startIndex = (currentPage - 1) * postsPerPage;
+
+    const currentPosts = filteredPosts.slice(
+        startIndex,
+        startIndex + postsPerPage
+    );
+
+    blogGrid.innerHTML = "";
+
+    currentPosts.forEach((post, index) => {
+        blogGrid.appendChild(createBlogCard(post, index));
+    });
+
+    noBlogResults.classList.toggle(
+        "hidden",
+        filteredPosts.length !== 0
+    );
+
+    renderPagination(totalPages);
+}
+
+// TAB FILTER
+blogTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+
+        blogTabs.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        activeType = tab.dataset.type;
+
+        currentPage = 1;
+
+        renderBlogs();
+    });
+});
+
+// INITIAL RENDER
+renderBlogs();
+
 // registr js
 
 
@@ -70,7 +327,7 @@ modal.innerHTML = `
                         Full Name
                     </label>
 
-                    <input id="fullName"
+                    <input required id="fullName"
                         type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
@@ -83,7 +340,7 @@ modal.innerHTML = `
                         Email
                     </label>
 
-                    <input id="email"
+                    <input required id="email"
                         type="email"
                         data-placeholder="yourWorkingEmail"
                         placeholder="Your working email"
@@ -97,7 +354,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="password"
+                        <input required id="password"
                             type="password"
                             data-placeholder="passwordPlaceholder"
                             placeholder="Password"
@@ -112,7 +369,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="confirmPassword"
+                        <input required id="confirmPassword"
                             type="password"
                             data-placeholder="confirmPasswordPlaceholder"
                             placeholder="Confirm password"
@@ -124,7 +381,7 @@ modal.innerHTML = `
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input type="checkbox" class="accent-[#ff3f22]">
+                        <input required type="checkbox" class="accent-[#ff3f22]">
                         <span data-key="keepSignedIn">Keep me signed in</span>
                     </label>
 
@@ -245,6 +502,13 @@ function translateAuthModal() {
 
 }
 
+const authModal = document.getElementById("authModal");
+
+authModal.addEventListener("click", (e) => {
+    if (e.target === authModal) {
+        authModal.classList.add("hidden");
+    }
+});
 
 // MODAL OCHILISHI
 const loginBtns = document.querySelectorAll('.loginBtn');
@@ -279,6 +543,7 @@ function closeAuthModal() {
 
 closeModal.addEventListener('click', closeAuthModal);
 
+
 // SIGN IN / SIGN UP
 let isSignUp = false;
 
@@ -296,7 +561,7 @@ function updateAuthMode() {
 
         rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
         `;
@@ -317,7 +582,7 @@ function updateAuthMode() {
 
         rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
 

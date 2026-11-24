@@ -1,5 +1,9 @@
 const translations = {
 	uz: {
+		all: "Barchasi",
+		readyToLearn: 'O‘QISH JARAYONIDAN ZAVQLANING!',
+		featuredCourses: 'Bizning onlayn kurslarimiz',
+		searchCourse: 'Kursni qidirish...',
 		ourMissionText:
 			'Mustahkam bilim va qimmatli tajriba kelajak sari ishonch bilan qadam tashlash uchun juda muhimdir. Biz har bir loyihada zamonaviy texnologiyalar va ijodiy yondashuvlardan foydalanamiz. Bizning asosiy vazifamiz foydali bilimlarni taqdim etish va insonlarga o‘z shaxsiy maqsadlariga erishishda yordam berishdir.',
 		ourValuesText:
@@ -540,6 +544,10 @@ const translations = {
 	},
 
 	en: {
+		all: "all",
+		readyToLearn: 'ENJOY YOUR STUDYING!',
+		featuredCourses: 'Our online courses',
+		searchCourse: 'Search course...',
 		ourMissionText:
 			'Strong knowledge and valuable experience are essential for moving confidently toward the future. We use modern technologies and creative approaches in every project. Our main mission is to provide useful knowledge and help people achieve their personal goals.',
 		ourValuesText:
@@ -903,7 +911,7 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: 'ANY QUESTIONS?',
+		anyQuestions: 'ANY QUESTIONS',
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
@@ -1046,6 +1054,10 @@ const translations = {
 	},
 
 	ru: {
+		all: "Все",
+		readyToLearn: 'НАСЛАЖДАЙТЕСЬ ОБУЧЕНИЕМ!',
+		featuredCourses: 'Наши онлайн-курсы',
+		searchCourse: 'Поиск курса...',
 		ourMissionText:
 			'Прочные знания и ценный опыт необходимы для уверенного движения в будущее. В каждом проекте мы используем современные технологии и творческие подходы. Наша главная миссия — предоставлять полезные знания и помогать людям достигать личных целей.',
 		ourValuesText:
@@ -1414,14 +1426,14 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: 'ANY QUESTIONS?',
+		anyQuestions: "ewf",
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
 		phoneNumber: 'Your phone number',
 		yourMessage: 'Your message',
-		newsletterAgreement:
-			'I agree to receive communications from Createx Online School',
+		newsletterAgreement: "Я соглашаюсь получать сообщения от онлайн-школы Createx",
+			
 		sendMessage: 'Send message',
 		// COURSE DETAILS PAGE
 		courseLabel: 'КУРС',

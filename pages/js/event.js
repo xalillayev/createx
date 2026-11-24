@@ -45,7 +45,6 @@ closeBtn.addEventListener('click', function () {
 
 // registr js
 
-
 const modal = document.createElement('div');
 
 modal.id = 'authModal';
@@ -94,7 +93,7 @@ modal.innerHTML = `
                         Full Name
                     </label>
 
-                    <input id="fullName"
+                    <input required id="fullName"
                         type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
@@ -107,7 +106,7 @@ modal.innerHTML = `
                         Email
                     </label>
 
-                    <input id="email"
+                    <input required id="email"
                         type="email"
                         data-placeholder="yourWorkingEmail"
                         placeholder="Your working email"
@@ -121,7 +120,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="password"
+                        <input required id="password"
                             type="password"
                             data-placeholder="passwordPlaceholder"
                             placeholder="Password"
@@ -136,7 +135,7 @@ modal.innerHTML = `
                     </label>
 
                     <div class="relative mt-2">
-                        <input id="confirmPassword"
+                        <input required id="confirmPassword"
                             type="password"
                             data-placeholder="confirmPasswordPlaceholder"
                             placeholder="Confirm password"
@@ -148,7 +147,7 @@ modal.innerHTML = `
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input type="checkbox" class="accent-[#ff3f22]">
+                        <input required type="checkbox" class="accent-[#ff3f22]">
                         <span data-key="keepSignedIn">Keep me signed in</span>
                     </label>
 
@@ -269,6 +268,13 @@ function translateAuthModal() {
 
 }
 
+const authModal = document.getElementById("authModal");
+
+authModal.addEventListener("click", (e) => {
+    if (e.target === authModal) {
+        authModal.classList.add("hidden");
+    }
+});
 
 // MODAL OCHILISHI
 const loginBtns = document.querySelectorAll('.loginBtn');
@@ -303,6 +309,7 @@ function closeAuthModal() {
 
 closeModal.addEventListener('click', closeAuthModal);
 
+
 // SIGN IN / SIGN UP
 let isSignUp = false;
 
@@ -320,7 +327,7 @@ function updateAuthMode() {
 
         rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
         `;
@@ -341,7 +348,7 @@ function updateAuthMode() {
 
         rememberBox.innerHTML = `
             <label class="flex items-center gap-2 text-xs">
-                <input type="checkbox" class="accent-[#ff3f22]">
+                <input required type="checkbox" class="accent-[#ff3f22]">
                 <span data-key="keepSignedIn"></span>
             </label>
 
@@ -382,3 +389,4 @@ if (languageSelect) {
     });
 
 }
+
