@@ -1,5 +1,6 @@
 const translations = {
 	uz: {
+		
 		allArticles: "Barcha maqolalar",
 		article: "Maqola",
 		video: "Video",
@@ -597,6 +598,12 @@ const translations = {
 	},
 
 	en: {
+		pguy: "by Guy Hawkins",
+		pdianne: "by Dianne Russell",
+		pkristin: "by Kristin Watson",
+		pleslie: "by Leslie Alexander Li",
+		pmarvin: "by Marvin McKinney",
+		pjarome: "by Jerome Bell",
 		allArticles: "All Articles",
 		article: "Article",
 		video: "Video",
@@ -1166,6 +1173,8 @@ const translations = {
 	},
 
 	ru: {
+		whyCreatex: "Почему Createx?",
+		whoWeAre: "КТО МЫ",
 		allArticles: "Все статьи",
 		article: "Статья",
 		video: "Видео",
