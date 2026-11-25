@@ -1,6 +1,10 @@
 const translations = {
 	uz: {
-		
+		cat_development: "Rivojlanish",
+		cat_design: "Dizayn",
+		cat_hr: "Inson resurslari va ishga qabul qilish",
+		cat_management: "Boshqaruv",
+		cat_marketing: "Marketing",
 		allArticles: "Barcha maqolalar",
 		article: "Maqola",
 		video: "Video",
@@ -121,8 +125,6 @@ const translations = {
 		whyText5: 'Tajribali mutaxassislar bilan ishlash.',
 		whyText6: 'Kelajak kasblari uchun kerakli ko‘nikmalar.',
 		moreAboutUs: 'Biz haqimizda batafsil',
-
-		readyToLearn: 'O‘RGANISHGA TAYYORMISIZ?',
 		featuredCourses: 'Mashhur kurslar',
 		viewAllCourses: 'Barcha kurslarni ko‘rish',
 
@@ -595,9 +597,15 @@ const translations = {
 		themefTitle: 'Har bir inson uchun qulay va ishonchli imkoniyatlar.',
 		themegTitle: 'Qulay muhit va zamonaviy ta’lim imkoniyatlari.',
 		theme1Title: 'Bilim va tajriba sari yangi imkoniyatlar.',
+		cat_all: "Barchasi",
 	},
 
 	en: {
+		cat_development: "Development",
+		cat_design: "Design",
+		cat_hr: "HR & Recruiting",
+		cat_management: "Management",
+		cat_marketing: "Marketing",
 		pguy: "by Guy Hawkins",
 		pdianne: "by Dianne Russell",
 		pkristin: "by Kristin Watson",
@@ -727,8 +735,6 @@ const translations = {
 		whyText5: 'Working with experienced specialists.',
 		whyText6: 'Skills needed for the professions of the future.',
 		moreAboutUs: 'More about us',
-
-		readyToLearn: 'READY TO LEARN?',
 		featuredCourses: 'Featured Courses',
 		viewAllCourses: 'View all courses',
 
@@ -1170,6 +1176,7 @@ const translations = {
 		yourWorkingEmail: 'Your working email',
 		passwordPlaceholder: 'Password',
 		confirmPasswordPlaceholder: 'Confirm password',
+		cat_all: "All",
 	},
 
 	ru: {
@@ -1300,7 +1307,6 @@ const translations = {
 		whyText6: 'Навыки, необходимые для профессий будущего.',
 		moreAboutUs: 'Подробнее о нас',
 
-		readyToLearn: 'ГОТОВЫ УЧИТЬСЯ?',
 		featuredCourses: 'Популярные курсы',
 		viewAllCourses: 'Посмотреть все курсы',
 
@@ -1782,8 +1788,6 @@ const translations = {
 		workingEmail: 'Ваш рабочий email',
 		phoneNumber: 'Ваш номер телефона',
 		yourMessage: 'Ваше сообщение',
-
-		readyToLearn: 'ПРИЯТНОГО ОБУЧЕНИЯ!',
 		featuredCourses: 'Наши онлайн-курсы',
 		createxCertificate: 'СЕРТИФИКАТ CREATEX',
 		expertiseConfirmed1: 'Ваша квалификация будет подтверждена',

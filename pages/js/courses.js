@@ -20,167 +20,191 @@ closeBtn.addEventListener('click', function () {
 
 // filter js
 
-const categories = [
-	{ id: 1, title: 'All', categoryKey: 'all' },
-	{ id: 2, title: 'Marketing', categoryKey: 'marketing' },
-	{ id: 3, title: 'Management', categoryKey: 'management' },
-	{ id: 4, title: 'HR & Recruiting', categoryKey: 'hr' },
-	{ id: 5, title: 'Design', categoryKey: 'design' },
-	{ id: 6, title: 'Development', categoryKey: 'development' },
-]
+
 
 const courses = [
-	{
-		id: 1,
-		title: 'The Ultimate Google Ads Training Course',
-		category: 'marketing',
-		price: 100,
-		author: 'Jerome Bell',
-		image: 'pages/pages/image/image1.png',
-	},
-	{
-		id: 2,
-		title: 'Product Management Fundamentals',
-		category: 'management',
-		price: 480,
-		author: 'Marvin McKinney',
-		image: 'pages/pages/image/image2.png',
-	},
-	{
-		id: 3,
-		title: 'HR Management and Analytics',
-		category: 'hr',
-		price: 200,
-		author: 'Leslie Alexander Li',
-		image: 'pages/pages/image/image3.png',
-	},
-	{
-		id: 4,
-		title: 'Brand Management & PR Communications',
-		category: 'marketing',
-		price: 530,
-		author: 'Kristin Watson',
-		image: 'pages/pages/image/image4.png',
-	},
-	{
-		id: 5,
-		title: 'Graphic Design Basic',
-		category: 'design',
-		price: 500,
-		author: 'Guy Hawkins',
-		image: 'pages/pages/image/image5.png',
-	},
-	{
-		id: 6,
-		title: 'Business Development Management',
-		category: 'management',
-		price: 400,
-		author: 'Dianne Russell',
-		image: 'pages/pages/image/image6.png',
-	},
-	{
-		id: 7,
-		title: 'Highload Software Architecture',
-		category: 'development',
-		price: 600,
-		author: 'Brooklyn Simmons',
-		image: 'pages/pages/image/image4.png',
-	},
-	{
-		id: 8,
-		title: 'Human Resources - Selection and Recruitment',
-		category: 'hr',
-		price: 150,
-		author: 'Kathryn Murphy',
-		image: 'pages/pages/image/image5.png',
-	},
-	{
-		id: 9,
-		title: 'User Experience. Human-centered Design',
-		category: 'design',
-		price: 240,
-		author: 'Cody Fisher',
-		image: 'pages/pages/image/image6.png',
-	},
-]
+    {
+        id: 1,
+        title: 'The Ultimate Google Ads Training Course',
+        category: 'marketing',
+        price: 100,
+        author: 'Jerome Bell',
+        image: 'pages/pages/image/image1.png',
+    },
+    {
+        id: 2,
+        title: 'Product Management Fundamentals',
+        category: 'management',
+        price: 480,
+        author: 'Marvin McKinney',
+        image: 'pages/pages/image/image2.png',
+    },
+    {
+        id: 3,
+        title: 'HR Management and Analytics',
+        category: 'hr',
+        price: 200,
+        author: 'Leslie Alexander Li',
+        image: 'pages/pages/image/image3.png',
+    },
+    {
+        id: 4,
+        title: 'Brand Management & PR Communications',
+        category: 'marketing',
+        price: 530,
+        author: 'Kristin Watson',
+        image: 'pages/pages/image/image4.png',
+    },
+    {
+        id: 5,
+        title: 'Graphic Design Basic',
+        category: 'design',
+        price: 500,
+        author: 'Guy Hawkins',
+        image: 'pages/pages/image/image5.png',
+    },
+    {
+        id: 6,
+        title: 'Business Development Management',
+        category: 'management',
+        price: 400,
+        author: 'Dianne Russell',
+        image: 'pages/pages/image/image6.png',
+    },
+    {
+        id: 7,
+        title: 'Highload Software Architecture',
+        category: 'development',
+        price: 600,
+        author: 'Brooklyn Simmons',
+        image: 'pages/pages/image/image4.png',
+    },
+    {
+        id: 8,
+        title: 'Human Resources - Selection and Recruitment',
+        category: 'hr',
+        price: 150,
+        author: 'Kathryn Murphy',
+        image: 'pages/pages/image/image5.png',
+    },
+    {
+        id: 9,
+        title: 'User Experience. Human-centered Design',
+        category: 'design',
+        price: 240,
+        author: 'Cody Fisher',
+        image: 'pages/pages/image/image6.png',
+    },
+];
 
-let filterButtons = document.querySelector('#filterButtons')
-let box = document.querySelector('#box')
+const filterButtons = document.querySelectorAll('.filter-btn');
+const box = document.querySelector('#box');
+const search = document.querySelector('#search');
+const noResults = document.querySelector('#noResults');
 
-let selectedCategory = 'all'
+let selectedCategory = 'all';
 
-categories.forEach(category => {
-	let categoryItem = document.createElement('button')
-
-	categoryItem.dataset.key = `cat_${category.categoryKey}`
-	categoryItem.textContent = category.title
-
-	categoryItem.className = `
-    px-3 py-2 text-xs text-white
-    border-2 border-[#FF5753]
-    bg-[#FF5753]
-    transition duration-300
-    hover:bg-transparent
-    hover:text-[#FF5753]
-`
-
-	categoryItem.onclick = () => {
-		handleChangeCategory(category.categoryKey)
-	}
-
-	filterButtons.append(categoryItem)
-})
-
-//
-
+// Kurslarni chiqarish
 function renderWorkers() {
-	box.innerHTML = ''
+    const searchValue = search.value.toLowerCase().trim();
 
-	const filteredCourses = courses.filter(course => {
-		return selectedCategory === 'all' || course.category === selectedCategory
-	})
+    const filteredCourses = courses.filter(course => {
+        const categoryMatch =
+            selectedCategory === 'all' ||
+            course.category === selectedCategory;
 
-	filteredCourses.forEach(course => {
-		let courseItem = document.createElement('div')
+        const searchMatch =
+            course.title.toLowerCase().includes(searchValue) ||
+            course.author.toLowerCase().includes(searchValue);
 
-		courseItem.className = `
+        return categoryMatch && searchMatch;
+    });
+
+    box.innerHTML = '';
+
+    noResults.classList.toggle('hidden', filteredCourses.length !== 0);
+
+    filteredCourses.forEach(course => {
+        const courseItem = document.createElement('div');
+
+        courseItem.className = `
             bg-white shadow-md overflow-hidden
             hover:shadow-xl transition
-        `
+        `;
 
-		courseItem.innerHTML = `
+        courseItem.innerHTML = `
             <div class="h-[180px] bg-[#ffcf32] flex items-center justify-center">
-                <img src="${course.image}" class="h-full object-contain">
+                <img
+                    src="${course.image}"
+                    alt="${course.title}"
+                    class="h-full object-contain"
+                >
             </div>
 
             <div class="p-4">
-                <span data-key="cat_${course.category}" class="text-xs text-white bg-[#03cea4] px-2 py-1">
+
+                <span
+                    data-key="cat_${course.category}"
+                    class="text-xs text-white bg-[#03cea4] px-2 py-1"
+                >
                     ${course.category}
                 </span>
 
-                <h3 data-key="course_${course.id}" class="font-bold text-sm mt-3 mb-2">
+                <h3
+                    data-key="course_${course.id}"
+                    class="font-bold text-sm mt-3 mb-2"
+                >
                     ${course.title}
                 </h3>
 
                 <p class="text-xs text-gray-500">
                     <span class="text-[#ff4242]">$${course.price}</span>
-                    | <span data-key="byAuthor">by</span> ${course.author}
+                    |
+                    <span data-key="byAuthor">by</span>
+                    ${course.author}
                 </p>
+
             </div>
-        `
+        `;
 
-		box.append(courseItem)
-	})
+        box.append(courseItem);
+    });
+
+    // Yangi chiqarilgan kurslarga tarjimani qo'llash
+    if (typeof applyTranslations === 'function') {
+        applyTranslations();
+    }
 }
 
+// Kategoriyani almashtirish
 function handleChangeCategory(category) {
-	selectedCategory = category
-	renderWorkers()
+    selectedCategory = category;
+
+    filterButtons.forEach(button => {
+        const isActive = button.dataset.category === category;
+
+        button.classList.toggle('bg-[#FF5753]', isActive);
+        button.classList.toggle('text-white', isActive);
+
+        button.classList.toggle('text-[#FF5753]', !isActive);
+    });
+
+    renderWorkers();
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-	renderWorkers()
-})
+// HTML dagi filter tugmalariga event berish
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        handleChangeCategory(button.dataset.category);
+    });
+});
+
+// Boshlang'ich render
+document.addEventListener('DOMContentLoaded', () => {
+    renderWorkers();
+});
+
+
 
 // registr js
 const modal = document.createElement('div');
