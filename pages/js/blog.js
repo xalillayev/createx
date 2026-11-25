@@ -147,7 +147,7 @@ function getFilteredPosts() {
     });
 }
 
-// RENDER BLOG CARD
+
 function createBlogCard(post, index) {
     const card = document.createElement("article");
 
@@ -255,7 +255,7 @@ function renderBlogs() {
     renderPagination(totalPages);
 }
 
-// TAB FILTER
+
 blogTabs.forEach(tab => {
     tab.addEventListener("click", () => {
 
@@ -273,7 +273,6 @@ blogTabs.forEach(tab => {
     });
 });
 
-// INITIAL RENDER
 renderBlogs();
 
 // registr js
@@ -559,13 +558,6 @@ function updateAuthMode() {
         fullName.required = true;
         confirmPassword.required = true;
 
-        rememberBox.innerHTML = `
-            <label class="flex items-center gap-2 text-xs">
-                <input required type="checkbox" class="accent-[#ff3f22]">
-                <span data-key="keepSignedIn"></span>
-            </label>
-        `;
-
         formTitle.dataset.key = 'signUp';
         formDescription.dataset.key = 'signUpDescription';
         submitBtn.dataset.key = 'signUp';
@@ -579,18 +571,6 @@ function updateAuthMode() {
 
         fullName.required = false;
         confirmPassword.required = false;
-
-        rememberBox.innerHTML = `
-            <label class="flex items-center gap-2 text-xs">
-                <input required type="checkbox" class="accent-[#ff3f22]">
-                <span data-key="keepSignedIn"></span>
-            </label>
-
-            <button type="button" id="forgotPassword"
-                class="text-[#ff3f22] hover:underline text-xs"
-                data-key="forgotPassword">
-            </button>
-        `;
 
         formTitle.dataset.key = 'signIn';
         formDescription.dataset.key = 'signInDescription';

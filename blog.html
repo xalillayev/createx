@@ -9,6 +9,7 @@
 
     
     <link rel="stylesheet" href="pages/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="/pages/pages/image/Vector(1).png">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -90,107 +91,96 @@
     <main class="pt-24 sm:pt-28">
         <section class="bg-white py-10 sm:py-14">
             <div class="max-w-[1200px] mx-auto px-4">
-    
-                <!-- TITLE -->
+        
                 <div class="text-center mb-10">
-                    <p class="text-xs font-bold tracking-widest mb-3" data-blog-key="ourBlog">
+                    <p class="text-xs font-bold tracking-widest mb-3" data-key="ourBlog">
                         OUR BLOG
                     </p>
-    
-                    <h1 class="text-3xl sm:text-4xl font-bold text-[#1e212c]" data-blog-key="blogJournal">
-                        Createx School Journal
+        
+                    <h1 class="text-3xl sm:text-4xl font-bold text-[#1e212c]" data-key="blogJournal">
+                        Welcome to the World of Knowledge and News
                     </h1>
                 </div>
-    
-                <!-- FILTERS -->
+        
                 <div class="flex flex-col lg:flex-row justify-between gap-5 mb-7">
-    
+        
                     <div class="flex flex-wrap items-center gap-2">
-    
-                        <button class="blog-tab active" data-type="all" data-blog-key="all">
-                            All
+        
+                        <button class="blog-tab active" data-type="all" data-key="allArticles">
+                            All Articles
                         </button>
-    
+        
                         <button class="blog-tab" data-type="article">
                             <span class="material-symbols-outlined">article</span>
-                            <span data-blog-key="articles">Articles</span>
+                            <span data-key="articles">Articles</span>
                         </button>
-    
+        
                         <button class="blog-tab" data-type="video">
                             <span class="material-symbols-outlined">play_circle</span>
-                            <span data-blog-kevideos">Videos</span>
+                            <span data-key="videos">Videos</span>
                         </button>
-    
+        
                         <button class="blog-tab" data-type="podcast">
                             <span class="material-symbols-outlined">mic</span>
-                            <span data-blog-key="podcasts">Podcasts</span>
+                            <span data-key="podcasts">Podcasts</span>
                         </button>
-    
+        
                     </div>
-    
-                    <!-- CATEGORY AND SEARCH -->
+        
                     <div class="flex flex-col sm:flex-row gap-3">
-    
+        
                         <div class="flex items-center gap-3">
                             <label for="blogCategory" class="text-xs font-medium whitespace-nowrap"
-                                data-blog-key="blogCategory">
-                                Blog category
+                                data-key="blogCategory">
+                                Category:
                             </label>
-    
+        
                             <select id="blogCategory"
                                 class="border border-gray-200 rounded-sm px-3 py-2 text-xs outline-none w-full sm:w-[165px]">
-    
-                                <option value="all" data-blog-key="allThemes">
-                                    all themes
+        
+                                <option value="all" data-key="allThemes">
+                                    All Categories
                                 </option>
-    
-                                <option value="Marketing" data-blog-key="marketing">
+        
+                                <option value="Marketing" data-key="marketing">
                                     Marketing
                                 </option>
-    
-                                <option value="Development" data-blog-key="development">
+        
+                                <option value="Development" data-key="development">
                                     Development
                                 </option>
-    
-                                <option value="Design" data-blog-key="design">
+        
+                                <option value="Design" data-key="design">
                                     Design
                                 </option>
-    
-                                <option value="HR & Recruiting" data-blog-key="hrRecruiting">
+        
+                                <option value="HR & Recruiting" data-key="hrRecruiting">
                                     HR & Recruiting
                                 </option>
-    
-                                <option value="Management" data-blog-key="management">
+        
+                                <option value="Management" data-key="management">
                                     Management
                                 </option>
-    
+        
                             </select>
                         </div>
-    
+        
                         <div class="relative">
-                            <input type="text" id="blogSearch" data-blog-placeholder="searchBlog"
-                                placeholder="Search blog..."
+                            <input type="text" id="blogSearch" data-placeholder="searchBlog"
+                                placeholder="Search for an article..."
                                 class="border border-gray-200 rounded-sm px-3 py-2 pr-9 text-xs outline-none focus:border-[#ff3f22] w-full sm:w-[220px]">
                         </div>
-    
+        
                     </div>
                 </div>
-    
-                <!-- BLOG GRID -->
+        
                 <div id="blogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-5 gap-y-8">
                 </div>
-    
-                <!-- NO RESULTS -->
-                <div id="noBlogResults" class="hidden text-center py-16 text-gray-500" data-blog-key="noResults">
-                    No articles found.
-                </div>
-    
-                <!-- PAGINATION -->
-                <div id="blogPagination" class="flex items-center justify-center gap-3 mt-12">
-                </div>
-    
+        
             </div>
         </section>
+
+
         
         <section class="w-full py-20 bg-[#FEDBD3]">
             <div class="mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
