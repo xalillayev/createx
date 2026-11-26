@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,100..700&icon_names=article,calendar_today,mic,play_circle,search,schedule,arrow_forward&display=block" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,100..700&icon_names=article,calendar_today,mic,play_circle,search,schedule,arrow_forward&display=block" />
 
-    
+
     <link rel="stylesheet" href="pages/css/style.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,7 +25,7 @@
             <a href="index.html">
                 <img src="/pages/pages/image/Navbar/logo.svg" alt="Createx logo" class="sm:w-32" />
             </a>
-    
+
             <nav class="hidden lg:flex items-center gap-6 font-medium">
                 <a href="about.html" class="hover:text-[#ff3f22]" data-key="about">About Us</a>
                 <a href="courses.html" class="hover:text-[#ff3f22]" data-key="courses">Courses</a>
@@ -33,15 +33,15 @@
                 <a href="blog.html" class="hover:text-[#ff3f22]" data-key="blog">Blog</a>
                 <a href="contact.html" class="hover:text-[#ff3f22]" data-key="contacts">Contacts</a>
             </nav>
-    
+
             <button>
                 <select name="select" id="languageSelect" class="outline-none cursor-pointer bg-[#FFDAD5] border-2">
                     <option value="en">Eng</option>
                     <option value="uz">Uzb</option>
-                    <option value="ru">Rus</option>
+                    <option value="ru">rus</option>
                 </select>
             </button>
-    
+
             <div class="hidden lg:flex items-center gap-4">
                 <a href="contact.html" class="bg-[#ff3f22] text-white px-6 py-3 font-bold rounded-md hover:bg-[#e9371d]"
                     data-key="getConsultation">
@@ -51,23 +51,24 @@
                     Log in / Register
                 </button>
             </div>
-    
+
             <button id="menuBtn" class="lg:hidden text-3xl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f">
                     <path d="M3,18V16H21v2H3Zm0-5V11H21v2H3ZM3,8V6H21V8H3Z" />
                 </svg>
             </button>
-    
+
             <button id="closeBtn" class="hidden lg:hidden text-3xl">
                 <span class="font-medium hover:text-[#ff3f22]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px"
+                        fill="#1f1f1f">
                         <path
                             d="M6.4,19L5,17.6L10.6,12L5,6.4L6.4,5L12,10.6L17.6,5L19,6.4L13.4,12L19,17.6L17.6,19L12,13.4L6.4,19Z" />
                     </svg>
                 </span>
             </button>
         </nav>
-    
+
         <div id="mobileMenu" class="hidden lg:hidden bg-[#ffc5b8] border-t border-[#f4b5a8] px-5 py-5">
             <div class="flex flex-col gap-5 font-medium">
                 <a href="about.html" class="hover:text-[#ff3f22]" data-key="about">About Us</a>
@@ -75,7 +76,8 @@
                 <a href="eventList.html" class="hover:text-[#ff3f22]" data-key="events">Events</a>
                 <a href="blog.html" class="hover:text-[#ff3f22]" data-key="blog">Blog</a>
                 <a href="contact.html" class="hover:text-[#ff3f22]" data-key="contacts">Contacts</a>
-                <a href="contact.html" class="bg-[#ff3f22] text-white text-center px-5 py-3 rounded-md hover:bg-[#e9371d]"
+                <a href="contact.html"
+                    class="bg-[#ff3f22] text-white text-center px-5 py-3 rounded-md hover:bg-[#e9371d]"
                     data-key="getConsultation">
                     Get consultation
                 </a>
@@ -90,115 +92,116 @@
     <main class="pt-24 sm:pt-28">
         <section class="bg-white py-10 sm:py-14">
             <div class="max-w-[1200px] mx-auto px-4">
-    
+
                 <!-- TITLE -->
                 <div class="text-center mb-10">
-                    <p class="text-xs font-bold tracking-widest mb-3" data-blog-key="ourBlog">
+                    <p class="text-xs font-bold tracking-widest mb-3" data-key="ourBlog">
                         OUR BLOG
                     </p>
-    
-                    <h1 class="text-3xl sm:text-4xl font-bold text-[#1e212c]" data-blog-key="blogJournal">
+
+                    <h1 class="text-3xl sm:text-4xl font-bold text-[#1e212c]" data-key="blogJournal">
                         Createx School Journal
                     </h1>
                 </div>
-    
+
                 <!-- FILTERS -->
                 <div class="flex flex-col lg:flex-row justify-between gap-5 mb-7">
-    
+
                     <div class="flex flex-wrap items-center gap-2">
-    
-                        <button class="blog-tab active" data-type="all" data-blog-key="all">
+
+                        <button class="blog-tab active" data-type="all" data-key="all">
                             All
                         </button>
-    
+
                         <button class="blog-tab" data-type="article">
                             <span class="material-symbols-outlined">article</span>
-                            <span data-blog-key="articles">Articles</span>
+                            <span data-key="articles">Articles</span>
                         </button>
-    
+
                         <button class="blog-tab" data-type="video">
                             <span class="material-symbols-outlined">play_circle</span>
-                            <span data-blog-kevideos">Videos</span>
+                            <span data-key="videos">Videos</span>
                         </button>
-    
+
                         <button class="blog-tab" data-type="podcast">
                             <span class="material-symbols-outlined">mic</span>
-                            <span data-blog-key="podcasts">Podcasts</span>
+                            <span data-key="podcasts">Podcasts</span>
                         </button>
-    
+
                     </div>
-    
+
                     <!-- CATEGORY AND SEARCH -->
                     <div class="flex flex-col sm:flex-row gap-3">
-    
+
                         <div class="flex items-center gap-3">
                             <label for="blogCategory" class="text-xs font-medium whitespace-nowrap"
-                                data-blog-key="blogCategory">
+                                data-key="blogCategory">
                                 Blog category
                             </label>
-    
+
                             <select id="blogCategory"
                                 class="border border-gray-200 rounded-sm px-3 py-2 text-xs outline-none w-full sm:w-[165px]">
-    
-                                <option value="all" data-blog-key="allThemes">
+
+                                <option value="all" data-key="allThemes">
                                     all themes
                                 </option>
-    
-                                <option value="Marketing" data-blog-key="marketing">
+
+                                <option value="Marketing" data-key="marketing">
                                     Marketing
                                 </option>
-    
-                                <option value="Development" data-blog-key="development">
+
+                                <option value="Development" data-key="development">
                                     Development
                                 </option>
-    
-                                <option value="Design" data-blog-key="design">
+
+                                <option value="Design" data-key="design">
                                     Design
                                 </option>
-    
-                                <option value="HR & Recruiting" data-blog-key="hrRecruiting">
+
+                                <option value="HR & Recruiting" data-key="hrRecruiting">
                                     HR & Recruiting
                                 </option>
-    
-                                <option value="Management" data-blog-key="management">
+
+                                <option value="Management" data-key="management">
                                     Management
                                 </option>
-    
+
                             </select>
                         </div>
-    
+
                         <div class="relative">
-                            <input type="text" id="blogSearch" data-blog-placeholder="searchBlog"
+                            <input type="text" id="blogSearch" data-key-placeholder="searchBlog"
                                 placeholder="Search blog..."
                                 class="border border-gray-200 rounded-sm px-3 py-2 pr-9 text-xs outline-none focus:border-[#ff3f22] w-full sm:w-[220px]">
                         </div>
-    
+
                     </div>
                 </div>
-    
+
                 <!-- BLOG GRID -->
                 <div id="blogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-5 gap-y-8">
                 </div>
-    
+
                 <!-- NO RESULTS -->
-                <div id="noBlogResults" class="hidden text-center py-16 text-gray-500" data-blog-key="noResults">
+                <div id="noBlogResults" class="hidden text-center py-16 text-gray-500" data-key="noResults">
                     No articles found.
                 </div>
-    
+
                 <!-- PAGINATION -->
                 <div id="blogPagination" class="flex items-center justify-center gap-3 mt-12">
                 </div>
-    
+
             </div>
         </section>
-        
+
         <section class="w-full py-20 bg-[#FEDBD3]">
             <div class="mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
-        
-                <p class="mb-3 text-[18px] font-semibold uppercase tracking-wide text-gray-700" data-key="dontMissAnything">
+
+                <p class="mb-3 text-[18px] font-semibold uppercase tracking-wide text-gray-700"
+                    data-key="dontMissAnything">
                     DON'T MISS ANYTHING
                 </p>
-        
+
                 <h2 class="max-w-2xl text-2xl font-bold leading-tight text-gray-900 md:text-3xl">
                     <span data-key="subscribeTitle1">
                         Subscribe to the Createx School
@@ -208,21 +211,21 @@
                         announcements
                     </span>
                 </h2>
-        
+
                 <form class="mt-8 flex w-full max-w-xl flex-col gap-3 sm:flex-row">
-        
+
                     <input
                         class="w-full sm:flex-1 h-12 rounded-sm border border-gray-200 px-4 text-sm text-gray-700 outline-none placeholder:text-gray-400 focus:border-orange-500 transition"
                         placeholder="Your working email" data-key-placeholder="workingEmail" type="email" required />
-        
+
                     <button
                         class="h-12 rounded-sm bg-orange-500 px-8 text-sm font-semibold text-white transition hover:bg-orange-600"
                         data-key="subscribe">
                         Subscribe
                     </button>
-        
+
                 </form>
-        
+
             </div>
         </section>
     </main>

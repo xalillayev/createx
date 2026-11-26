@@ -1,6 +1,6 @@
 const translations = {
 	uz: {
-		all: "Barchasi",
+		all: 'Barchasi',
 		readyToLearn: 'O‘QISH JARAYONIDAN ZAVQLANING!',
 		featuredCourses: 'Bizning onlayn kurslarimiz',
 		searchCourse: 'Kursni qidirish...',
@@ -544,7 +544,7 @@ const translations = {
 	},
 
 	en: {
-		all: "all",
+		all: 'all',
 		readyToLearn: 'ENJOY YOUR STUDYING!',
 		featuredCourses: 'Our online courses',
 		searchCourse: 'Search course...',
@@ -1054,7 +1054,7 @@ const translations = {
 	},
 
 	ru: {
-		all: "Все",
+		all: 'Все',
 		readyToLearn: 'НАСЛАЖДАЙТЕСЬ ОБУЧЕНИЕМ!',
 		featuredCourses: 'Наши онлайн-курсы',
 		searchCourse: 'Поиск курса...',
@@ -1426,14 +1426,15 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: "ewf",
+		anyQuestions: 'ewf',
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
 		phoneNumber: 'Your phone number',
 		yourMessage: 'Your message',
-		newsletterAgreement: "Я соглашаюсь получать сообщения от онлайн-школы Createx",
-			
+		newsletterAgreement:
+			'Я соглашаюсь получать сообщения от онлайн-школы Createx',
+
 		sendMessage: 'Send message',
 		// COURSE DETAILS PAGE
 		courseLabel: 'КУРС',
@@ -1668,8 +1669,10 @@ const translations = {
 		eventPriceDescription:
 			'Никакой привязанности кошки и полосы. Привязанность мавра сколь возвышенна, печальна и богата.',
 		speakerDescription:
-			'Заботясь о привязанности к другому, пусть страх бросит в пасть. Время, куратор, придет, раненая придет, закваска прежде. Ничто, любит это всегда, всегда кто угодно — удобство, следствие. Масса течет, пусть будет у болезни ненависть. Пусть меценат, нить созерцает или алмаз. Привязанность, раненая, тяжесть проливает на массу, но колчан. К удобству площадь это пусть обитает вперед. Никакого нет, ни даже самого положения нет. Ибо или другое, печальное, беспокойство между чем.',               
+			'Заботясь о привязанности к другому, пусть страх бросит в пасть. Время, куратор, придет, раненая придет, закваска прежде. Ничто, любит это всегда, всегда кто угодно — удобство, следствие. Масса течет, пусть будет у болезни ненависть. Пусть меценат, нить созерцает или алмаз. Привязанность, раненая, тяжесть проливает на массу, но колчан. К удобству площадь это пусть обитает вперед. Никакого нет, ни даже самого положения нет. Ибо или другое, печальное, беспокойство между чем.',
 	},
+	searchBlog: 'Поиск по блогу...',
+	blogJournal: 'Журнал школы Createx',
 }
 
 function translate(language) {
