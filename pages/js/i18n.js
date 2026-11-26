@@ -543,6 +543,23 @@ const translations = {
 		theme1Title: 'Bilim va tajriba sari yangi imkoniyatlar.',
 	},
 
+	cat_all: 'Barchasi',
+	cat_marketing: 'Marketing',
+	cat_management: 'Menejment',
+	cat_hr: 'HR va Rekruting',
+	cat_design: 'Dizayn',
+	cat_development: 'Dasturlash',
+	course_1: "Google Ads bo'yicha mukammal trening kursi",
+	course_2: 'Mahsulot menejmenti asoslari',
+	course_3: 'HR menejmenti va tahlil',
+	course_4: 'Brend menejmenti va PR kommunikatsiyalar',
+	course_5: 'Grafik dizayn asoslari',
+	course_6: 'Biznesni rivojlantirish menejmenti',
+	course_7: 'Yuqori yuklamali dasturiy arxitektura',
+	course_8: 'Inson resurslari - Tanlash va ishga olish',
+	course_9: "Foydalanuvchi tajribasi (UX). Insonga yo'naltirilgan dizayn",
+	byAuthor: 'muallif:',
+
 	en: {
 		all: 'all',
 		readyToLearn: 'ENJOY YOUR STUDYING!',
