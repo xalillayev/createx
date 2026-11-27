@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,100..700&icon_names=article,calendar_today,mic,play_circle,search,schedule,arrow_forward&display=block" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL,opsz,wght@0..1,20..48,100..700&icon_names=article,calendar_today,mic,play_circle,search,schedule,arrow_forward&display=block" />
 
-    
+
     <link rel="stylesheet" href="pages/css/style.css">
     <link rel="icon" type="image/svg+xml" href="/pages/pages/image/Vector(1).png">
 
@@ -26,7 +26,7 @@
             <a href="index.html">
                 <img src="/pages/pages/image/Navbar/logo.svg" alt="Createx logo" class="sm:w-32" />
             </a>
-    
+
             <nav class="hidden lg:flex items-center gap-6 font-medium">
                 <a href="about.html" class="hover:text-[#ff3f22]" data-key="about">About Us</a>
                 <a href="courses.html" class="hover:text-[#ff3f22]" data-key="courses">Courses</a>
@@ -34,15 +34,15 @@
                 <a href="blog.html" class="hover:text-[#ff3f22]" data-key="blog">Blog</a>
                 <a href="contact.html" class="hover:text-[#ff3f22]" data-key="contacts">Contacts</a>
             </nav>
-    
+
             <button>
                 <select name="select" id="languageSelect" class="outline-none cursor-pointer bg-[#FFDAD5] border-2">
                     <option value="en">Eng</option>
                     <option value="uz">Uzb</option>
-                    <option value="ru">Rus</option>
+                    <option value="ru">rus</option>
                 </select>
             </button>
-    
+
             <div class="hidden lg:flex items-center gap-4">
                 <a href="contact.html" class="bg-[#ff3f22] text-white px-6 py-3 font-bold rounded-md hover:bg-[#e9371d]"
                     data-key="getConsultation">
@@ -52,23 +52,24 @@
                     Log in / Register
                 </button>
             </div>
-    
+
             <button id="menuBtn" class="lg:hidden text-3xl">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f">
                     <path d="M3,18V16H21v2H3Zm0-5V11H21v2H3ZM3,8V6H21V8H3Z" />
                 </svg>
             </button>
-    
+
             <button id="closeBtn" class="hidden lg:hidden text-3xl">
                 <span class="font-medium hover:text-[#ff3f22]">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px" fill="#1f1f1f">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24px" width="24px"
+                        fill="#1f1f1f">
                         <path
                             d="M6.4,19L5,17.6L10.6,12L5,6.4L6.4,5L12,10.6L17.6,5L19,6.4L13.4,12L19,17.6L17.6,19L12,13.4L6.4,19Z" />
                     </svg>
                 </span>
             </button>
         </nav>
-    
+
         <div id="mobileMenu" class="hidden lg:hidden bg-[#ffc5b8] border-t border-[#f4b5a8] px-5 py-5">
             <div class="flex flex-col gap-5 font-medium">
                 <a href="about.html" class="hover:text-[#ff3f22]" data-key="about">About Us</a>
@@ -76,7 +77,8 @@
                 <a href="eventList.html" class="hover:text-[#ff3f22]" data-key="events">Events</a>
                 <a href="blog.html" class="hover:text-[#ff3f22]" data-key="blog">Blog</a>
                 <a href="contact.html" class="hover:text-[#ff3f22]" data-key="contacts">Contacts</a>
-                <a href="contact.html" class="bg-[#ff3f22] text-white text-center px-5 py-3 rounded-md hover:bg-[#e9371d]"
+                <a href="contact.html"
+                    class="bg-[#ff3f22] text-white text-center px-5 py-3 rounded-md hover:bg-[#e9371d]"
                     data-key="getConsultation">
                     Get consultation
                 </a>
@@ -179,14 +181,15 @@
         
             </div>
         </section>
-        
+
         <section class="w-full py-20 bg-[#FEDBD3]">
             <div class="mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
-        
-                <p class="mb-3 text-[18px] font-semibold uppercase tracking-wide text-gray-700" data-key="dontMissAnything">
+
+                <p class="mb-3 text-[18px] font-semibold uppercase tracking-wide text-gray-700"
+                    data-key="dontMissAnything">
                     DON'T MISS ANYTHING
                 </p>
-        
+
                 <h2 class="max-w-2xl text-2xl font-bold leading-tight text-gray-900 md:text-3xl">
                     <span data-key="subscribeTitle1">
                         Subscribe to the Createx School
@@ -196,21 +199,21 @@
                         announcements
                     </span>
                 </h2>
-        
+
                 <form class="mt-8 flex w-full max-w-xl flex-col gap-3 sm:flex-row">
-        
+
                     <input
                         class="w-full sm:flex-1 h-12 rounded-sm border border-gray-200 px-4 text-sm text-gray-700 outline-none placeholder:text-gray-400 focus:border-orange-500 transition"
                         placeholder="Your working email" data-key-placeholder="workingEmail" type="email" required />
-        
+
                     <button
                         class="h-12 rounded-sm bg-orange-500 px-8 text-sm font-semibold text-white transition hover:bg-orange-600"
                         data-key="subscribe">
                         Subscribe
                     </button>
-        
+
                 </form>
-        
+
             </div>
         </section>
     </main>

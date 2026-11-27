@@ -600,6 +600,23 @@ const translations = {
 		cat_all: "Barchasi",
 	},
 
+	cat_all: 'Barchasi',
+	cat_marketing: 'Marketing',
+	cat_management: 'Menejment',
+	cat_hr: 'HR va Rekruting',
+	cat_design: 'Dizayn',
+	cat_development: 'Dasturlash',
+	course_1: "Google Ads bo'yicha mukammal trening kursi",
+	course_2: 'Mahsulot menejmenti asoslari',
+	course_3: 'HR menejmenti va tahlil',
+	course_4: 'Brend menejmenti va PR kommunikatsiyalar',
+	course_5: 'Grafik dizayn asoslari',
+	course_6: 'Biznesni rivojlantirish menejmenti',
+	course_7: 'Yuqori yuklamali dasturiy arxitektura',
+	course_8: 'Inson resurslari - Tanlash va ishga olish',
+	course_9: "Foydalanuvchi tajribasi (UX). Insonga yo'naltirilgan dizayn",
+	byAuthor: 'muallif:',
+
 	en: {
 		cat_development: "Development",
 		cat_design: "Design",
@@ -1607,14 +1624,15 @@ const translations = {
 		address: 'Address:',
 		contactAddress: '2464 Royal Ln. Mesa, New Jersey 45463, USA',
 		followUs: 'FOLLOW US:',
-		anyQuestions: "ewf",
+		anyQuestions: 'ewf',
 		dropUsALine: 'Drop us a line',
 		firstName: 'Your first name',
 		lastName: 'Your last name',
 		phoneNumber: 'Your phone number',
 		yourMessage: 'Your message',
-		newsletterAgreement: "Я соглашаюсь получать сообщения от онлайн-школы Createx",
-			
+		newsletterAgreement:
+			'Я соглашаюсь получать сообщения от онлайн-школы Createx',
+
 		sendMessage: 'Send message',
 		// COURSE DETAILS PAGE
 		courseLabel: 'КУРС',
@@ -1847,8 +1865,10 @@ const translations = {
 		eventPriceDescription:
 			'Никакой привязанности кошки и полосы. Привязанность мавра сколь возвышенна, печальна и богата.',
 		speakerDescription:
-			'Заботясь о привязанности к другому, пусть страх бросит в пасть. Время, куратор, придет, раненая придет, закваска прежде. Ничто, любит это всегда, всегда кто угодно — удобство, следствие. Масса течет, пусть будет у болезни ненависть. Пусть меценат, нить созерцает или алмаз. Привязанность, раненая, тяжесть проливает на массу, но колчан. К удобству площадь это пусть обитает вперед. Никакого нет, ни даже самого положения нет. Ибо или другое, печальное, беспокойство между чем.',               
+			'Заботясь о привязанности к другому, пусть страх бросит в пасть. Время, куратор, придет, раненая придет, закваска прежде. Ничто, любит это всегда, всегда кто угодно — удобство, следствие. Масса течет, пусть будет у болезни ненависть. Пусть меценат, нить созерцает или алмаз. Привязанность, раненая, тяжесть проливает на массу, но колчан. К удобству площадь это пусть обитает вперед. Никакого нет, ни даже самого положения нет. Ибо или другое, печальное, беспокойство между чем.',
 	},
+	searchBlog: 'Поиск по блогу...',
+	blogJournal: 'Журнал школы Createx',
 }
 
 

@@ -207,15 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // registr js
-const modal = document.createElement('div');
+const modal = document.createElement('div')
 
-modal.id = 'authModal';
+modal.id = 'authModal'
 
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`;
+`
 
 modal.innerHTML = `
     <div id="modalBox"
@@ -382,104 +382,104 @@ modal.innerHTML = `
         </div>
 
     </div>
-`;
+`
 
-document.body.appendChild(modal);
-
+document.body.appendChild(modal)
 
 // ELEMENTLAR
-const closeModal = document.getElementById('closeModal');
-const formTitle = document.getElementById('formTitle');
-const formDescription = document.getElementById('formDescription');
-const authForm = document.getElementById('authForm');
-const nameBox = document.getElementById('nameBox');
-const confirmBox = document.getElementById('confirmBox');
-const fullName = document.getElementById('fullName');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirmPassword');
-const rememberBox = document.getElementById('rememberBox');
-const submitBtn = document.getElementById('submitBtn');
-const switchText = document.getElementById('switchText');
-const switchBtn = document.getElementById('switchBtn');
-const message = document.getElementById('message');
-
+const closeModal = document.getElementById('closeModal')
+const formTitle = document.getElementById('formTitle')
+const formDescription = document.getElementById('formDescription')
+const authForm = document.getElementById('authForm')
+const nameBox = document.getElementById('nameBox')
+const confirmBox = document.getElementById('confirmBox')
+const fullName = document.getElementById('fullName')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const confirmPassword = document.getElementById('confirmPassword')
+const rememberBox = document.getElementById('rememberBox')
+const submitBtn = document.getElementById('submitBtn')
+const switchText = document.getElementById('switchText')
+const switchBtn = document.getElementById('switchBtn')
+const message = document.getElementById('message')
 
 // TARJIMA FUNKSIYASI
 function translateAuthModal() {
+	const currentLang =
+		document.getElementById('languageSelect')?.value ||
+		localStorage.getItem('language') ||
+		'en'
 
-    document.querySelectorAll('#authModal [data-key]').forEach(element => {
+	if (typeof translate === 'function') {
+		translate(currentLang)
+		return
+	}
 
-        const key = element.dataset.key;
+	document.querySelectorAll('#authModal [data-key]').forEach(element => {
+		const key = element.dataset.key
 
-        if (translations[language]?.[key]) {
-            element.textContent = translations[language][key];
-        }
+		if (translations?.[currentLang]?.[key]) {
+			element.textContent = translations[currentLang][key]
+		}
+	})
 
-    });
+	document
+		.querySelectorAll('#authModal [data-placeholder]')
+		.forEach(element => {
+			const key = element.dataset.placeholder
 
-    document.querySelectorAll('#authModal [data-placeholder]').forEach(element => {
-
-        const key = element.dataset.placeholder;
-
-        if (translations[language]?.[key]) {
-            element.placeholder = translations[language][key];
-        }
-
-    });
-
+			if (translations?.[currentLang]?.[key]) {
+				element.placeholder = translations[currentLang][key]
+			}
+		})
 }
 
-const authModal = document.getElementById("authModal");
+const authModal = document.getElementById('authModal')
 
-authModal.addEventListener("click", (e) => {
-    if (e.target === authModal) {
-        authModal.classList.add("hidden");
-    }
-});
+authModal.addEventListener('click', e => {
+	if (e.target === authModal) {
+		authModal.classList.add('hidden')
+	}
+})
 
 // MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn');
+const loginBtns = document.querySelectorAll('.loginBtn')
 
 loginBtns.forEach(button => {
+	button.addEventListener('click', function () {
+		modal.classList.remove('hidden')
+		modal.classList.add('flex')
 
-    button.addEventListener('click', function () {
+		mobileMenu.classList.add('hidden')
+		menuBtn.classList.remove('hidden')
+		closeBtn.classList.add('hidden')
 
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-
-        mobileMenu.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-        closeBtn.classList.add('hidden');
-
-        translateAuthModal();
-
-    });
-
-});
-
+		translateAuthModal()
+	})
+})
 
 // MODAL YOPILISHI
 function closeAuthModal() {
+	modal.classList.add('hidden')
+	modal.classList.remove('flex')
 
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-
-    message.textContent = '';
-
+	message.textContent = ''
 }
 
-closeModal.addEventListener('click', closeAuthModal);
-
+closeModal.addEventListener('click', closeAuthModal)
 
 // SIGN IN / SIGN UP
-let isSignUp = false;
+let isSignUp = false
 
 function updateAuthMode() {
+	message.textContent = ''
 
-    message.textContent = '';
+	if (isSignUp) {
+		nameBox.classList.remove('hidden')
+		confirmBox.classList.remove('hidden')
 
-    if (isSignUp) {
+		fullName.required = true
+		confirmPassword.required = true
 
         nameBox.classList.remove('hidden');
         confirmBox.classList.remove('hidden');
@@ -495,11 +495,17 @@ function updateAuthMode() {
 
     } else {
 
-        nameBox.classList.add('hidden');
-        confirmBox.classList.add('hidden');
+		formTitle.dataset.key = 'signUp'
+		formDescription.dataset.key = 'signUpDescription'
+		submitBtn.dataset.key = 'signUp'
+		switchText.dataset.key = 'haveAccount'
+		switchBtn.dataset.key = 'signIn'
+	} else {
+		nameBox.classList.add('hidden')
+		confirmBox.classList.add('hidden')
 
-        fullName.required = false;
-        confirmPassword.required = false;
+		fullName.required = false
+		confirmPassword.required = false
 
         formTitle.dataset.key = 'signIn';
         formDescription.dataset.key = 'signInDescription';
@@ -509,27 +515,29 @@ function updateAuthMode() {
 
     }
 
-    translateAuthModal();
+		formTitle.dataset.key = 'signIn'
+		formDescription.dataset.key = 'signInDescription'
+		submitBtn.dataset.key = 'signIn'
+		switchText.dataset.key = 'noAccount'
+		switchBtn.dataset.key = 'signUp'
+	}
 
+	translateAuthModal()
 }
 
 switchBtn.addEventListener('click', function () {
+	isSignUp = !isSignUp
 
-    isSignUp = !isSignUp;
-
-    updateAuthMode();
-
-});
-
+	updateAuthMode()
+})
 
 // TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('language');
+const languageSelect = document.getElementById('languageSelect')
 
 if (languageSelect) {
-
-    languageSelect.addEventListener('change', function () {
-        translateAuthModal();
-    });
-
+	languageSelect.addEventListener('change', function () {
+		renderFilterButtons()
+		renderWorkers()
+		translateAuthModal()
+	})
 }
-

@@ -1,292 +1,377 @@
-const menuBtn = document.querySelector('#menuBtn');
-const closeBtn = document.querySelector('#closeBtn');
-const mobileMenu = document.querySelector('#mobileMenu');
+const menuBtn = document.querySelector('#menuBtn')
+const closeBtn = document.querySelector('#closeBtn')
+const mobileMenu = document.querySelector('#mobileMenu')
 
-// Menu ochish
-menuBtn.addEventListener('click', function () {
-    mobileMenu.classList.remove('hidden');
+if (menuBtn && closeBtn && mobileMenu) {
+	menuBtn.addEventListener('click', function () {
+		mobileMenu.classList.remove('hidden')
+		menuBtn.classList.add('hidden')
+		closeBtn.classList.remove('hidden')
+	})
 
-    menuBtn.classList.add('hidden');
-    closeBtn.classList.remove('hidden');
-});
-
-// Menu yopish
-closeBtn.addEventListener('click', function () {
-    mobileMenu.classList.add('hidden');
-
-    closeBtn.classList.add('hidden');
-    menuBtn.classList.remove('hidden');
-});
-
-
+	closeBtn.addEventListener('click', function () {
+		mobileMenu.classList.add('hidden')
+		closeBtn.classList.add('hidden')
+		menuBtn.classList.remove('hidden')
+	})
+}
 
 const blogPosts = [
-    {
-        type: "podcast",
-        category: "Marketing",
-        date: "September 4, 2020",
-        duration: "36 min",
-        title: "What is traffic arbitrage and does it really make money?",
-        description: "Pharetra, ullamcorper iaculis viverra parturient sed id sed. Consequat proin dignissim lacus, purus gravida...",
-        action: "Listen",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "article",
-        category: "Development",
-        date: "September 1, 2020",
-        duration: "",
-        title: "How to choose the first programming language for a beginner",
-        description: "Turpis sed at magna laoreet gravida consequat tortor placerat. Gravida vitae aliquet enim egestas dui...",
-        action: "Read",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "video",
-        category: "Design",
-        date: "August 8, 2020",
-        duration: "40 min",
-        title: "Should you choose a creative profession if you are attracted to creativity?",
-        description: "Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...",
-        action: "Watch",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "article",
-        category: "HR & Recruiting",
-        date: "August 3, 2020",
-        duration: "",
-        title: "HR statistics: job search, interviews, hiring and recruiting",
-        description: "Massa, lectus nibh consectetur aliquet nunc risus aenean. Leo hac netus bibendum diam adipiscing aenean nisl...",
-        action: "Read",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "video",
-        category: "Management",
-        date: "August 2, 2020",
-        duration: "45 min",
-        title: "What to do and who to talk to if you want to get feedback on the product",
-        description: "Neque, a senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...",
-        action: "Watch",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "podcast",
-        category: "Design",
-        date: "July 28, 2020",
-        duration: "36 min",
-        title: "What are color profiles and how they work in graphic design",
-        description: "Aliquam vulputate hendrerit quam sollicitudin urna enim viverra gravida. Consectetur urna arcu eleifend...",
-        action: "Listen",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "video",
-        category: "Management",
-        date: "July 15, 2020",
-        duration: "45 min",
-        title: "Startup: how to build a team that will live longer than a year",
-        description: "Nisi, massa ut sit faucibus. Faucibus at malesuada at justo scelerisque in nisi, urna...",
-        action: "Watch",
-        image: "/pages/pages/image/image.png"
-    },
-    {
-        type: "article",
-        category: "Marketing",
-        date: "July 9, 2020",
-        duration: "",
-        title: "How to get customers to love your business from the start",
-        description: "Malesuada in augue mi feugiat morbi a aliquet enim. Elementum lacus, pellentesque etiam arcu tristique...",
-        action: "Read",
-        image: "/pages/pages/image/image.png"
-    }
-];
+	{
+		type: 'podcast',
+		categoryKey: 'Marketing',
+		category: { en: 'Marketing', ru: 'Маркетинг', uz: 'Marketing' },
+		date: {
+			en: 'September 4, 2020',
+			ru: '4 сентября, 2020',
+			uz: '4-sentabr, 2020',
+		},
+		duration: { en: '36 min', ru: '36 мин', uz: '36 daqiqa' },
+		title: {
+			en: 'What is traffic arbitrage and does it really make money?',
+			ru: 'Что такое арбитраж трафика и можно ли на нём реально заработать?',
+			uz: 'Trafik arbitraji nima va undan haqiqatan ham pul ishlash mumkinmi?',
+		},
+		description: {
+			en: 'Pharetra, ullamcorper iaculis viverra parturient sed id sed. Consequat proin dignissim lacus, purus gravida...',
+			ru: 'Узнайте, как устроена закупка трафика, какие источники работают лучше всего и как избежать слива бюджета...',
+			uz: 'Trafik sotib olish qanday ishlashi, qaysi manbalar samarali ekani va byudjetni yo‘qotmaslik yo‘llari...',
+		},
+		action: { en: 'Listen', ru: 'Слушать', uz: 'Tinglash' },
+		image: '/pages/pages/image/image.svg',
+	},
+	{
+		type: 'article',
+		categoryKey: 'Development',
+		category: { en: 'Development', ru: 'Разработка', uz: 'Dasturlash' },
+		date: {
+			en: 'September 1, 2020',
+			ru: '1 сентября, 2020',
+			uz: '1-sentabr, 2020',
+		},
+		duration: { en: '', ru: '', uz: '' },
+		title: {
+			en: 'How to choose the first programming language for a beginner',
+			ru: 'Как выбрать первый язык программирования для новичка',
+			uz: 'Yangi boshlovchi uchun birinchi dasturlash tilini qanday tanlash kerak',
+		},
+		description: {
+			en: 'Turpis sed at magna laoreet gravida consequat tortor placerat. Gravida vitae aliquet enim egestas dui...',
+			ru: 'Подробный разбор популярных языков: Python, JavaScript и C#. С чего проще начать карьеру в IT...',
+			uz: 'Mashhur tillar tahlili: Python, JavaScript va C#. IT sohasida karyerani nimadan boshlash osonroq...',
+		},
+		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
+		image: '/pages/pages/image/imge.png',
+	},
+	{
+		type: 'video',
+		categoryKey: 'Design',
+		category: { en: 'Design', ru: 'Дизайн', uz: 'Dizayn' },
+		date: { en: 'August 8, 2020', ru: '8 августа, 2020', uz: '8-avgust, 2020' },
+		duration: { en: '40 min', ru: '40 мин', uz: '40 daqiqa' },
+		title: {
+			en: 'Should you choose a creative profession if you are attracted to creativity?',
+			ru: 'Стоит ли выбирать творческую профессию, если вас тянет к креативу?',
+			uz: 'Agar ijodkorlikka qiziqsangiz, kreativ kasbni tanlash kerakmi?',
+		},
+		description: {
+			en: 'Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...',
+			ru: 'Плюсы и минусы работы в креативных индустриях, поиск вдохновения и баланс между творчеством и дедлайнами...',
+			uz: 'Kreativ sohalarda ishlashning afzalliklari va kamchiliklari, ilhom topish hamda dedlaynlar muvozanati...',
+		},
+		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
+		image: '/pages/pages/image/imag(1).png',
+	},
+	{
+		type: 'article',
+		categoryKey: 'HR & Recruiting',
+		category: {
+			en: 'HR & Recruiting',
+			ru: 'HR и рекрутинг',
+			uz: 'HR va rekruting',
+		},
+		date: { en: 'August 3, 2020', ru: '3 августа, 2020', uz: '3-avgust, 2020' },
+		duration: { en: '', ru: '', uz: '' },
+		title: {
+			en: 'HR statistics: job search, interviews, hiring and recruiting',
+			ru: 'HR-статистика: поиск работы, собеседования, найм и рекрутинг',
+			uz: 'HR statistikasi: ish qidirish, suhbatlar, ishga olish va rekruting',
+		},
+		description: {
+			en: 'Massa, lectus nibh consectetur aliquet nunc risus aenean. Leo hac netus bibendum diam adipiscing aenean nisl...',
+			ru: 'Актуальные цифры и тренды рынка труда: сколько времени занимает поиск кандидатов и что важно соискателям...',
+			uz: 'Mehnat bozoridagi dolzarb raqamlar va trendlar: nomzod topish qancha vaqt oladi va nimalar muhim...',
+		},
+		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
+		image: '/pages/pages/image/image(s1).png',
+	},
+	{
+		type: 'video',
+		categoryKey: 'Management',
+		category: { en: 'Management', ru: 'Менеджмент', uz: 'Menejment' },
+		date: { en: 'August 2, 2020', ru: '2 августа, 2020', uz: '2-avgust, 2020' },
+		duration: { en: '45 min', ru: '45 мин', uz: '45 daqiqa' },
+		title: {
+			en: 'What to do and who to talk to if you want to get feedback on the product',
+			ru: 'Что делать и с кем общаться, чтобы получить обратную связь о продукте',
+			uz: 'Mahsulot haqida fikr-mulohaza olish uchun nima qilish va kim bilan gaplashish kerak',
+		},
+		description: {
+			en: 'Neque, a senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...',
+			ru: 'Как правильно проводить глубинные интервью с пользователями и улучшать продукт на основе реальных отзывов...',
+			uz: 'Foydalanuvchilar bilan suhbat o‘tkazish va real fikrlar asosida mahsulotni yaxshilash usullari...',
+		},
+		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
+		image: '/pages/pages/image/image.jpg',
+	},
+	{
+		type: 'podcast',
+		categoryKey: 'Design',
+		category: { en: 'Design', ru: 'Дизайн', uz: 'Dizayn' },
+		date: { en: 'July 28, 2020', ru: '28 июля, 2020', uz: '28-iyul, 2020' },
+		duration: { en: '36 min', ru: '36 мин', uz: '36 daqiqa' },
+		title: {
+			en: 'What are color profiles and how they work in graphic design',
+			ru: 'Что такое цветовые профили и как они работают в графическом дизайне',
+			uz: 'Rang profillari nima va ular grafik dizaynda qanday ishlaydi',
+		},
+		description: {
+			en: 'Aliquam vulputate hendrerit quam sollicitudin urna enim viverra gravida. Consectetur urna arcu eleifend...',
+			ru: 'Разница между RGB, CMYK и sRGB: как настроить цвета, чтобы макет одинаково выглядел на экране и в печати...',
+			uz: 'RGB, CMYK va sRGB o‘rtasidagi farq: maket ekranda va bosmada bir xil chiqishi uchun ranglarni sozlash...',
+		},
+		action: { en: 'Listen', ru: 'Слушать', uz: 'Tinglash' },
+		image: '/pages/pages/image/image(aa).png',
+	},
+	{
+		type: 'video',
+		categoryKey: 'Management',
+		category: { en: 'Management', ru: 'Менеджмент', uz: 'Menejment' },
+		date: { en: 'July 15, 2020', ru: '15 июля, 2020', uz: '15-iyul, 2020' },
+		duration: { en: '45 min', ru: '45 мин', uz: '45 daqiqa' },
+		title: {
+			en: 'Startup: how to build a team that will live longer than a year',
+			ru: 'Стартап: как собрать команду, которая проживёт дольше года',
+			uz: 'Startap: bir yildan ortiq yashaydigan jamoani qanday qurish mumkin',
+		},
+		description: {
+			en: 'Nisi, massa ut sit faucibus. Faucibus at malesuada at justo scelerisque in nisi, urna...',
+			ru: 'Как искать единомышленников, распределять роли и сохранять мотивацию на ранних этапах запуска проекта...',
+			uz: 'Hamfikrlarni topish, rollarni taqsimlash va loyihaning dastlabki bosqichlarida motivatsiyani saqlash...',
+		},
+		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
+		image: '/pages/pages/image/image(abd).png',
+	},
+	{
+		type: 'article',
+		categoryKey: 'Marketing',
+		category: { en: 'Marketing', ru: 'Маркетинг', uz: 'Marketing' },
+		date: { en: 'July 9, 2020', ru: '9 июля, 2020', uz: '9-iyul, 2020' },
+		duration: { en: '', ru: '', uz: '' },
+		title: {
+			en: 'How to get customers to love your business from the start',
+			ru: 'Как сделать так, чтобы клиенты полюбили ваш бизнес с самого старта',
+			uz: 'Mijozlar biznesingizni boshidanoq sevib qolishi uchun nima qilish kerak',
+		},
+		description: {
+			en: 'Malesuada in augue mi feugiat morbi a aliquet enim. Elementum lacus, pellentesque etiam arcu tristique...',
+			ru: 'Секреты клиентского сервиса, построение доверия и создание сильного первого впечатления о бренде...',
+			uz: 'Mijozlarga xizmat ko‘rsatish sirlari, ishonch qozonish va brend haqida kuchli birinchi taassurot qoldirish...',
+		},
+		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
+		image: '/pages/pages/image/image(k).png',
+	},
+]
 
-// ELEMENTS
-const blogGrid = document.getElementById("blogGrid");
-const blogSearch = document.getElementById("blogSearch");
-const blogCategory = document.getElementById("blogCategory");
-const blogPagination = document.getElementById("blogPagination");
-const noBlogResults = document.getElementById("noBlogResults");
+const typeLabels = {
+	article: { en: 'Article', ru: 'Статья', uz: 'Maqola' },
+	video: { en: 'Video', ru: 'Видео', uz: 'Video' },
+	podcast: { en: 'Podcast', ru: 'Подкаст', uz: 'Podkast' },
+}
 
-const blogTabs = document.querySelectorAll(".blog-tab");
+const blogGrid = document.getElementById('blogGrid')
+const blogSearch = document.getElementById('blogSearch')
+const blogCategory = document.getElementById('blogCategory')
+const blogPagination = document.getElementById('blogPagination')
+const noBlogResults = document.getElementById('noBlogResults')
+const blogTabs = document.querySelectorAll('.blog-tab')
 
-// SETTINGS
-let activeType = "all";
-let currentPage = 1;
+let activeType = 'all'
+let currentPage = 1
+const postsPerPage = 8
 
-const postsPerPage = 8;
-
-// ICONS
 const typeIcons = {
-    article: "article",
-    video: "play_circle",
-    podcast: "mic"
-};
+	article: 'article',
+	video: 'play_circle',
+	podcast: 'mic',
+}
 
-// FILTER
+function getCurrentLang() {
+	const selectEl =
+		document.getElementById('language') ||
+		document.querySelector('select[id*="lang"]')
+	if (selectEl && selectEl.value) {
+		return selectEl.value.toLowerCase()
+	}
+	if (typeof language !== 'undefined' && language) {
+		return language.toLowerCase()
+	}
+	return (
+		localStorage.getItem('lang') ||
+		localStorage.getItem('language') ||
+		'en'
+	).toLowerCase()
+}
+
 function getFilteredPosts() {
-    const searchValue = blogSearch.value.toLowerCase().trim();
-    const categoryValue = blogCategory.value;
+	const lang = getCurrentLang()
+	const searchValue = blogSearch ? blogSearch.value.toLowerCase().trim() : ''
+	const categoryValue = blogCategory ? blogCategory.value : 'all'
 
-    return blogPosts.filter(post => {
-        const matchesType =
-            activeType === "all" || post.type === activeType;
+	return blogPosts.filter(post => {
+		const matchesType = activeType === 'all' || post.type === activeType
+		const matchesCategory =
+			categoryValue === 'all' || post.categoryKey === categoryValue
 
-        const matchesCategory =
-            categoryValue === "all" ||
-            post.category === categoryValue;
+		const titleText = (post.title[lang] || post.title.en).toLowerCase()
+		const descText = (
+			post.description[lang] || post.description.en
+		).toLowerCase()
+		const catText = (post.category[lang] || post.category.en).toLowerCase()
 
-        const matchesSearch =
-            post.title.toLowerCase().includes(searchValue) ||
-            post.description.toLowerCase().includes(searchValue) ||
-            post.category.toLowerCase().includes(searchValue);
+		const matchesSearch =
+			titleText.includes(searchValue) ||
+			descText.includes(searchValue) ||
+			catText.includes(searchValue)
 
-        return matchesType && matchesCategory && matchesSearch;
-    });
+		return matchesType && matchesCategory && matchesSearch
+	})
 }
 
 
 function createBlogCard(post, index) {
-    const card = document.createElement("article");
+	const lang = getCurrentLang()
+	const card = document.createElement('article')
 
-    card.className = `blog-card ${index === 3 || index === 4 ? "wide" : ""}`;
+	const title = post.title[lang] || post.title.en
+	const category = post.category[lang] || post.category.en
+	const date = post.date[lang] || post.date.en
+	const duration = post.duration[lang] || post.duration.en
+	const description = post.description[lang] || post.description.en
+	const action = post.action[lang] || post.action.en
+	const typeText = typeLabels[post.type]?.[lang] || post.type
 
-    card.innerHTML = `
+	card.className = `blog-card ${index === 3 || index === 4 ? 'wide' : ''}`
+
+	card.innerHTML = `
         <div class="relative overflow-hidden rounded-sm">
-
             <img
                 src="${post.image}"
-                alt="${post.title}"
+                alt="${title}"
                 class="blog-image transition duration-500 hover:scale-105"
                 loading="lazy"
             >
-
             <span class="absolute top-2 left-2 bg-white text-gray-600
                 text-[9px] px-2 py-1 rounded-sm flex items-center gap-1">
-
                 <span class="material-symbols-outlined text-[12px]">
                     ${typeIcons[post.type]}
                 </span>
-
-                ${post.type.charAt(0).toUpperCase() + post.type.slice(1)}
-
+                ${typeText}
             </span>
-
         </div>
 
         <div class="blog-card-content">
-
             <div class="blog-meta">
-
-                <span>${post.category}</span>
-
+                <span>${category}</span>
                 <span>|</span>
-
                 <span class="material-symbols-outlined">calendar_today</span>
-
-                <span>${post.date}</span>
-
-                ${post.duration
-            ? `
+                <span>${date}</span>
+                ${
+									duration
+										? `
                         <span>|</span>
                         <span class="material-symbols-outlined">schedule</span>
-                        <span>${post.duration}</span>
+                        <span>${duration}</span>
                     `
-            : ""
-        }
-
+										: ''
+								}
             </div>
 
             <h3 class="blog-card-title">
-                ${post.title}
+                ${title}
             </h3>
 
             <p class="blog-description">
-                ${post.description}
+                ${description}
             </p>
 
             <a href="#" class="blog-action">
-
-                ${post.action}
-
+                ${action}
                 <span class="material-symbols-outlined">
                     arrow_forward
                 </span>
-
             </a>
-
         </div>
-    `;
+    `
 
-    return card;
+	return card
 }
 
-
-// MAIN RENDER
 function renderBlogs() {
-    const filteredPosts = getFilteredPosts();
+	if (!blogGrid) return
 
-    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+	const filteredPosts = getFilteredPosts()
+	const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
 
-    if (currentPage > totalPages) {
-        currentPage = Math.max(1, totalPages);
-    }
+	if (currentPage > totalPages) {
+		currentPage = Math.max(1, totalPages)
+	}
 
-    const startIndex = (currentPage - 1) * postsPerPage;
+	const startIndex = (currentPage - 1) * postsPerPage
+	const currentPosts = filteredPosts.slice(
+		startIndex,
+		startIndex + postsPerPage,
+	)
 
-    const currentPosts = filteredPosts.slice(
-        startIndex,
-        startIndex + postsPerPage
-    );
+	blogGrid.innerHTML = ''
 
-    blogGrid.innerHTML = "";
+	currentPosts.forEach((post, index) => {
+		blogGrid.appendChild(createBlogCard(post, index))
+	})
 
-    currentPosts.forEach((post, index) => {
-        blogGrid.appendChild(createBlogCard(post, index));
-    });
+	if (noBlogResults) {
+		noBlogResults.classList.toggle('hidden', filteredPosts.length !== 0)
+	}
 
-    noBlogResults.classList.toggle(
-        "hidden",
-        filteredPosts.length !== 0
-    );
-
-    renderPagination(totalPages);
+	if (typeof renderPagination === 'function') {
+		renderPagination(totalPages)
+	}
 }
 
+window.renderBlogs = renderBlogs
 
 blogTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
+	tab.addEventListener('click', () => {
+		blogTabs.forEach(item => item.classList.remove('active'))
+		tab.classList.add('active')
+		activeType = tab.dataset.type
+		currentPage = 1
+		renderBlogs()
+	})
+})
 
-        blogTabs.forEach(item => {
-            item.classList.remove("active");
-        });
+if (blogSearch) blogSearch.addEventListener('input', renderBlogs)
+if (blogCategory) blogCategory.addEventListener('change', renderBlogs)
 
-        tab.classList.add("active");
+renderBlogs()
 
-        activeType = tab.dataset.type;
-
-        currentPage = 1;
-
-        renderBlogs();
-    });
-});
-
-renderBlogs();
-
-// registr js
-
-
-const modal = document.createElement('div');
-
-modal.id = 'authModal';
-
+const modal = document.createElement('div')
+modal.id = 'authModal'
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`;
+`
 
 modal.innerHTML = `
     <div id="modalBox"
@@ -453,153 +538,147 @@ modal.innerHTML = `
         </div>
 
     </div>
-`;
+`
 
-document.body.appendChild(modal);
+document.body.appendChild(modal)
 
+const closeModal = document.getElementById('closeModal')
+const formTitle = document.getElementById('formTitle')
+const formDescription = document.getElementById('formDescription')
+const authForm = document.getElementById('authForm')
+const nameBox = document.getElementById('nameBox')
+const confirmBox = document.getElementById('confirmBox')
+const fullName = document.getElementById('fullName')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const confirmPassword = document.getElementById('confirmPassword')
+const rememberBox = document.getElementById('rememberBox')
+const submitBtn = document.getElementById('submitBtn')
+const switchText = document.getElementById('switchText')
+const switchBtn = document.getElementById('switchBtn')
+const message = document.getElementById('message')
 
-// ELEMENTLAR
-const closeModal = document.getElementById('closeModal');
-const formTitle = document.getElementById('formTitle');
-const formDescription = document.getElementById('formDescription');
-const authForm = document.getElementById('authForm');
-const nameBox = document.getElementById('nameBox');
-const confirmBox = document.getElementById('confirmBox');
-const fullName = document.getElementById('fullName');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirmPassword');
-const rememberBox = document.getElementById('rememberBox');
-const submitBtn = document.getElementById('submitBtn');
-const switchText = document.getElementById('switchText');
-const switchBtn = document.getElementById('switchBtn');
-const message = document.getElementById('message');
-
-
-// TARJIMA FUNKSIYASI
 function translateAuthModal() {
+	if (typeof translations === 'undefined') return
+	const currentLang = getCurrentLang()
 
-    document.querySelectorAll('#authModal [data-key]').forEach(element => {
+	document.querySelectorAll('#authModal [data-key]').forEach(element => {
+		const key = element.dataset.key
+		if (translations[currentLang]?.[key]) {
+			element.textContent = translations[currentLang][key]
+		}
+	})
 
-        const key = element.dataset.key;
-
-        if (translations[language]?.[key]) {
-            element.textContent = translations[language][key];
-        }
-
-    });
-
-    document.querySelectorAll('#authModal [data-placeholder]').forEach(element => {
-
-        const key = element.dataset.placeholder;
-
-        if (translations[language]?.[key]) {
-            element.placeholder = translations[language][key];
-        }
-
-    });
-
+	document
+		.querySelectorAll('#authModal [data-placeholder]')
+		.forEach(element => {
+			const key = element.dataset.placeholder
+			if (translations[currentLang]?.[key]) {
+				element.placeholder = translations[currentLang][key]
+			}
+		})
 }
 
-const authModal = document.getElementById("authModal");
+const authModal = document.getElementById('authModal')
 
-authModal.addEventListener("click", (e) => {
-    if (e.target === authModal) {
-        authModal.classList.add("hidden");
-    }
-});
+authModal.addEventListener('click', e => {
+	if (e.target === authModal) {
+		authModal.classList.add('hidden')
+	}
+})
 
-// MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn');
+const loginBtns = document.querySelectorAll('.loginBtn')
 
 loginBtns.forEach(button => {
+	button.addEventListener('click', function () {
+		modal.classList.remove('hidden')
+		modal.classList.add('flex')
 
-    button.addEventListener('click', function () {
+		if (mobileMenu) mobileMenu.classList.add('hidden')
+		if (menuBtn) menuBtn.classList.remove('hidden')
+		if (closeBtn) closeBtn.classList.add('hidden')
 
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+		translateAuthModal()
+	})
+})
 
-        mobileMenu.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-        closeBtn.classList.add('hidden');
-
-        translateAuthModal();
-
-    });
-
-});
-
-
-// MODAL YOPILISHI
 function closeAuthModal() {
-
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-
-    message.textContent = '';
-
+	modal.classList.add('hidden')
+	modal.classList.remove('flex')
+	message.textContent = ''
 }
 
-closeModal.addEventListener('click', closeAuthModal);
+closeModal.addEventListener('click', closeAuthModal)
 
-
-// SIGN IN / SIGN UP
-let isSignUp = false;
+let isSignUp = false
 
 function updateAuthMode() {
+	message.textContent = ''
 
-    message.textContent = '';
+	if (isSignUp) {
+		nameBox.classList.remove('hidden')
+		confirmBox.classList.remove('hidden')
 
-    if (isSignUp) {
+		fullName.required = true
+		confirmPassword.required = true
 
-        nameBox.classList.remove('hidden');
-        confirmBox.classList.remove('hidden');
+		rememberBox.innerHTML = `
+            <label class="flex items-center gap-2 text-xs">
+                <input required type="checkbox" class="accent-[#ff3f22]">
+                <span data-key="keepSignedIn"></span>
+            </label>
+        `
 
-        fullName.required = true;
-        confirmPassword.required = true;
+		formTitle.dataset.key = 'signUp'
+		formDescription.dataset.key = 'signUpDescription'
+		submitBtn.dataset.key = 'signUp'
+		switchText.dataset.key = 'haveAccount'
+		switchBtn.dataset.key = 'signIn'
+	} else {
+		nameBox.classList.add('hidden')
+		confirmBox.classList.add('hidden')
 
-        formTitle.dataset.key = 'signUp';
-        formDescription.dataset.key = 'signUpDescription';
-        submitBtn.dataset.key = 'signUp';
-        switchText.dataset.key = 'haveAccount';
-        switchBtn.dataset.key = 'signIn';
+		fullName.required = false
+		confirmPassword.required = false
 
-    } else {
+		rememberBox.innerHTML = `
+            <label class="flex items-center gap-2 text-xs">
+                <input required type="checkbox" class="accent-[#ff3f22]">
+                <span data-key="keepSignedIn"></span>
+            </label>
 
-        nameBox.classList.add('hidden');
-        confirmBox.classList.add('hidden');
+            <button type="button" id="forgotPassword"
+                class="text-[#ff3f22] hover:underline text-xs"
+                data-key="forgotPassword">
+            </button>
+        `
 
-        fullName.required = false;
-        confirmPassword.required = false;
+		formTitle.dataset.key = 'signIn'
+		formDescription.dataset.key = 'signInDescription'
+		submitBtn.dataset.key = 'signIn'
+		switchText.dataset.key = 'noAccount'
+		switchBtn.dataset.key = 'signUp'
+	}
 
-        formTitle.dataset.key = 'signIn';
-        formDescription.dataset.key = 'signInDescription';
-        submitBtn.dataset.key = 'signIn';
-        switchText.dataset.key = 'noAccount';
-        switchBtn.dataset.key = 'signUp';
-
-    }
-
-    translateAuthModal();
-
+	translateAuthModal()
 }
 
 switchBtn.addEventListener('click', function () {
+	isSignUp = !isSignUp
+	updateAuthMode()
+})
 
-    isSignUp = !isSignUp;
-
-    updateAuthMode();
-
-});
-
-
-// TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('language');
+const languageSelect =
+	document.getElementById('language') ||
+	document.querySelector('select[id*="lang"]')
 
 if (languageSelect) {
-
-    languageSelect.addEventListener('change', function () {
-        translateAuthModal();
-    });
-
+	languageSelect.addEventListener('change', function () {
+		setTimeout(() => {
+			translateAuthModal()
+			renderBlogs()
+		}, 10)
+	})
 }
+
+window.addEventListener('storage', renderBlogs)
