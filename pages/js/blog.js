@@ -248,6 +248,7 @@ function getFilteredPosts() {
 	})
 }
 
+
 function createBlogCard(post, index) {
 	const lang = getCurrentLang()
 	const card = document.createElement('article')

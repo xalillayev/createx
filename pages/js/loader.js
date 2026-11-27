@@ -4,7 +4,7 @@ const startTime = Date.now();
 
 window.addEventListener("load", () => {
     const elapsedTime = Date.now() - startTime;
-    const remainingTime = Math.max(0, 1000 - elapsedTime);
+    const remainingTime = Math.max(0, 700 - elapsedTime);
 
     setTimeout(() => {
         loader.classList.add("hide");

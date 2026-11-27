@@ -1,6 +1,70 @@
 const translations = {
 	uz: {
-		all: 'Barchasi',
+		cat_development: "Rivojlanish",
+		cat_design: "Dizayn",
+		cat_hr: "Inson resurslari va ishga qabul qilish",
+		cat_management: "Boshqaruv",
+		cat_marketing: "Marketing",
+		allArticles: "Barcha maqolalar",
+		article: "Maqola",
+		video: "Video",
+		podcast: "Podkast",
+
+		marketing: "Marketing",
+		development: "Dasturlash",
+		design: "Dizayn",
+		hrRecruiting: "Kadrlar boshqaruvi",
+		management: "Boshqaruv",
+
+		listen: "Tinglash",
+		read: "O'qish",
+		watch: "Tomosha qilish",
+
+		noResults: "Sizning qidiruvingiz bo'yicha maqolalar topilmadi.",
+
+		post1Title: "Trafik arbitraji nima va u orqali daromad topish mumkinmi?",
+		post1Description: "Trafik arbitraji qanday ishlashi, undan daromad olish imkoniyatlari va marketingdagi ahamiyati haqida bilib oling.",
+
+		post2Title: "Boshlovchilar uchun birinchi dasturlash tilini qanday tanlash kerak?",
+		post2Description: "Dasturlashni endi boshlayotganlar uchun mos tilni tanlash, uning imkoniyatlari va o'rganish yo'llari haqida foydali maslahatlar.",
+
+		post3Title: "Ijodkorlikka qiziqsangiz, kreativ kasbni tanlash kerakmi?",
+		post3Description: "Dizayn va ijodiy sohalarning imkoniyatlari, kasb tanlashdagi muhim jihatlar va o'z qiziqishingizni rivojlantirish haqida.",
+
+		post4Title: "HR statistikasi: ish qidirish, suhbat va xodimlarni tanlash",
+		post4Description: "Mehnat bozoridagi zamonaviy tendensiyalar, ishga qabul qilish jarayoni va muvaffaqiyatli suhbat o'tkazish haqida.",
+
+		post5Title: "Mahsulot haqida fikr-mulohazalarni qanday olish mumkin?",
+		post5Description: "Mahsulotni rivojlantirish uchun foydalanuvchilar fikrini o'rganish, to'g'ri savollar berish va foydali takliflarni yig'ish usullari.",
+
+		post6Title: "Grafik dizaynda rang profillari nima va ular qanday ishlaydi?",
+		post6Description: "Rang profillarining vazifasi, ularning dizayndagi ahamiyati va turli qurilmalarda ranglarni to'g'ri aks ettirish haqida.",
+
+		post7Title: "Startap: bir yildan ortiq birga ishlaydigan jamoani qanday tuzish mumkin?",
+		post7Description: "Kuchli jamoa shakllantirish, xodimlar o'rtasida ishonch yaratish va uzoq muddatli hamkorlikni yo'lga qo'yish haqida.",
+
+		post8Title: "Mijozlarni biznesingizga boshidanoq qanday jalb qilish mumkin?",
+		post8Description: "Mijozlar ishonchini qozonish, sifatli xizmat ko'rsatish va biznesni rivojlantirish uchun samarali marketing usullari.",
+		ourBlog: "BIZNING BLOGIMIZ",
+		blogJournal: "Createx maktabi jurnali",
+		all: "Barchasi",
+		articles: "Maqolalar",
+		videos: "Videolar",
+		podcasts: "Podkastlar",
+		blogCategory: "Blog kategoriyasi",
+		allThemes: "Barcha mavzular",
+		marketing: "Marketing",
+		development: "Dasturlash",
+		design: "Dizayn",
+		hrRecruiting: "HR va xodimlarni tanlash",
+		management: "Boshqaruv",
+		searchBlog: "Blogdan qidirish...",
+		developmentDescription: "Dasturlash asoslarini o‘rganing, veb-saytlar yarating, real hayotdagi muammolarni hal eting va amaliy kodlash ko‘nikmalarini rivojlantiring.",
+		designDescription: "Ijodiy dizayn tamoyillarini o‘rganing, ranglar va tipografiya bilan ishlang hamda jozibali, foydalanuvchilar uchun qulay interfeyslar yarating.",
+		hrDescription: "Iste'dodli xodimlarni topish, suhbatlar o'tkazish, jamoalarni qo'llab-quvvatlash va ijobiy ish muhitini yaratishni o'rganing.",
+		managementDescription: "Yetakchilik ko‘nikmalarini rivojlantiring, jamoalarni boshqarishni, loyihalarni tashkil etishni hamda samarali biznes qarorlarini qabul qilishni o‘rganing.",
+		marketingDescription: "Mahsulotlarni targ‘ib qilishni, mijozlar ehtiyojlarini tushunishni, kuchli brendlar yaratishni hamda samarali marketing strategiyalarini ishlab chiqishni o‘rganing.",
+		all: "Barchasi",
 		readyToLearn: 'O‘QISH JARAYONIDAN ZAVQLANING!',
 		featuredCourses: 'Bizning onlayn kurslarimiz',
 		searchCourse: 'Kursni qidirish...',
@@ -61,8 +125,6 @@ const translations = {
 		whyText5: 'Tajribali mutaxassislar bilan ishlash.',
 		whyText6: 'Kelajak kasblari uchun kerakli ko‘nikmalar.',
 		moreAboutUs: 'Biz haqimizda batafsil',
-
-		readyToLearn: 'O‘RGANISHGA TAYYORMISIZ?',
 		featuredCourses: 'Mashhur kurslar',
 		viewAllCourses: 'Barcha kurslarni ko‘rish',
 
@@ -254,16 +316,10 @@ const translations = {
 		ourCoreValues: 'Bizning asosiy qadriyatlarimiz',
 		structuredApproach: 'Tizimli yondashuv',
 		structuredDescription:
-			'Aenean urna dictum adipiscing nec, cras quisque. Nunc in mauris.',
+			'Soha mutaxassislaridan amaliy bilim oling va oz karyerangizni ishonch bilan aniqlash.',
 		professionalFeedbacks: 'Professional fikr-mulohazalar',
-		feedbackDescription:
-			'Culpa nostrud commodo ea consequat reprehenderit aliquip.',
 		efficiency: 'Samaradorlik',
-		efficiencyDescription:
-			'Viverra scelerisque consequat net. Adipisicing esse consequat.',
 		flexibleSchedule: 'Moslashuvchan jadval',
-		scheduleDescription:
-			'Aute eiusmod dolore dolore deserunt veniam ad deserunt.',
 
 		ourMainDirections: 'Bizning asosiy yo‘nalishlarimiz',
 		whatDoWeTeach: 'Biz nimalarni o‘rgatamiz',
@@ -541,6 +597,7 @@ const translations = {
 		themefTitle: 'Har bir inson uchun qulay va ishonchli imkoniyatlar.',
 		themegTitle: 'Qulay muhit va zamonaviy ta’lim imkoniyatlari.',
 		theme1Title: 'Bilim va tajriba sari yangi imkoniyatlar.',
+		cat_all: "Barchasi",
 	},
 
 	cat_all: 'Barchasi',
@@ -561,7 +618,77 @@ const translations = {
 	byAuthor: 'muallif:',
 
 	en: {
-		all: 'all',
+		cat_development: "Development",
+		cat_design: "Design",
+		cat_hr: "HR & Recruiting",
+		cat_management: "Management",
+		cat_marketing: "Marketing",
+		pguy: "by Guy Hawkins",
+		pdianne: "by Dianne Russell",
+		pkristin: "by Kristin Watson",
+		pleslie: "by Leslie Alexander Li",
+		pmarvin: "by Marvin McKinney",
+		pjarome: "by Jerome Bell",
+		allArticles: "All Articles",
+		article: "Article",
+		video: "Video",
+		podcast: "Podcast",
+
+		marketing: "Marketing",
+		development: "Development",
+		design: "Design",
+		hrRecruiting: "HR & Recruiting",
+		management: "Management",
+
+		listen: "Listen",
+		read: "Read",
+		watch: "Watch",
+
+		noResults: "No articles found matching your search.",
+
+		post1Title: "What is traffic arbitrage and can you really make money from it?",
+		post1Description: "Learn how traffic arbitrage works, how it can generate income and why it matters in digital marketing.",
+
+		post2Title: "How should beginners choose their first programming language?",
+		post2Description: "Useful advice on choosing your first programming language, understanding its possibilities and starting your coding journey.",
+
+		post3Title: "Should you choose a creative career if you enjoy being creative?",
+		post3Description: "Explore creative careers, opportunities in design and important things to consider when choosing your professional path.",
+
+		post4Title: "HR statistics: job searching, interviews and recruitment",
+		post4Description: "Discover modern employment trends, recruitment processes and practical tips for successful job interviews.",
+
+		post5Title: "How can you collect feedback about your product?",
+		post5Description: "Learn how to understand customer opinions, ask the right questions and collect useful feedback to improve your product.",
+
+		post6Title: "What are color profiles and how do they work in graphic design?",
+		post6Description: "Understand color profiles, their importance in design and how to display colors correctly across different devices.",
+
+		post7Title: "Startup: how to build a team that stays together for more than a year",
+		post7Description: "Discover how to build a strong team, create trust between employees and develop long-term cooperation.",
+
+		post8Title: "How can you make customers love your business from the start?",
+		post8Description: "Learn effective marketing strategies to earn customer trust, provide quality service and grow your business.",
+		ourBlog: "OUR BLOG",
+		blogJournal: "Createx School Journal",
+		all: "All",
+		articles: "Articles",
+		videos: "Videos",
+		podcasts: "Podcasts",
+		blogCategory: "Blog category",
+		allThemes: "All themes",
+		marketing: "Marketing",
+		development: "Development",
+		design: "Design",
+		hrRecruiting: "HR & Recruiting",
+		management: "Management",
+		searchBlog: "Search blog...",
+		developmentDescription: "Learn programming fundamentals, build websites, solve real-world problems, and develop practical coding skills.",
+		designDescription: "Explore creative design principles, work with colors and typography, and create attractive user- friendly interfaces.",
+		hrDescription: "Learn how to find talented employees, conduct interviews, support teams, and build a positive workplace.",
+		managementDescription: "Develop leadership skills, learn to manage teams, organize projects, and make effective business decisions.",
+		marketingDescription: "Learn how to promote products, understand customer needs, build strong brands, and create effective marketing strategies.",
+		all: "all",
 		readyToLearn: 'ENJOY YOUR STUDYING!',
 		featuredCourses: 'Our online courses',
 		searchCourse: 'Search course...',
@@ -625,8 +752,6 @@ const translations = {
 		whyText5: 'Working with experienced specialists.',
 		whyText6: 'Skills needed for the professions of the future.',
 		moreAboutUs: 'More about us',
-
-		readyToLearn: 'READY TO LEARN?',
 		featuredCourses: 'Featured Courses',
 		viewAllCourses: 'View all courses',
 
@@ -815,16 +940,16 @@ const translations = {
 		ourCoreValues: 'Our core values',
 		structuredApproach: 'Structured Approach',
 		structuredDescription:
-			'Aenean urna dictum adipiscing nec, cras quisque. Nunc in mauris.',
+			'Gain practical knowledge from industry experts and define your career with confidence.',
 		professionalFeedbacks: 'Professional Feedbacks',
 		feedbackDescription:
-			'Culpa nostrud commodo ea consequat reprehenderit aliquip.',
+			'Combine modern knowledge with practical application to become a highly skilled specialist in your field.',
 		efficiency: 'Efficiency',
 		efficiencyDescription:
-			'Viverra scelerisque consequat net. Adipisicing esse consequat.',
+			'Work on practical projects and gain real-world experience.',
 		flexibleSchedule: 'Flexible Schedule',
 		scheduleDescription:
-			'Aute eiusmod dolore dolore deserunt veniam ad deserunt.',
+			'Achieve your goals faster with the help of experienced mentors.',
 
 		ourMainDirections: 'Our main directions',
 		whatDoWeTeach: 'What do we teach',
@@ -1068,10 +1193,72 @@ const translations = {
 		yourWorkingEmail: 'Your working email',
 		passwordPlaceholder: 'Password',
 		confirmPasswordPlaceholder: 'Confirm password',
+		cat_all: "All",
 	},
 
 	ru: {
-		all: 'Все',
+		whyCreatex: "Почему Createx?",
+		whoWeAre: "КТО МЫ",
+		allArticles: "Все статьи",
+		article: "Статья",
+		video: "Видео",
+		podcast: "Подкаст",
+
+		marketing: "Маркетинг",
+		development: "Разработка",
+		design: "Дизайн",
+		hrRecruiting: "Управление персоналом",
+		management: "Менеджмент",
+
+		listen: "Слушать",
+		read: "Читать",
+		watch: "Смотреть",
+
+		noResults: "По вашему запросу статьи не найдены.",
+
+		post1Title: "Что такое арбитраж трафика и можно ли на нём заработать?",
+		post1Description: "Узнайте, как работает арбитраж трафика, какие возможности заработка он предлагает и какую роль играет в цифровом маркетинге.",
+
+		post2Title: "Как новичку выбрать свой первый язык программирования?",
+		post2Description: "Полезные советы по выбору первого языка программирования, его возможностям и началу обучения.",
+
+		post3Title: "Стоит ли выбирать творческую профессию, если вам нравится творчество?",
+		post3Description: "Узнайте о возможностях творческих профессий, сфере дизайна и важных аспектах выбора будущей карьеры.",
+
+		post4Title: "Статистика HR: поиск работы, собеседования и подбор персонала",
+		post4Description: "Современные тенденции рынка труда, процессы найма сотрудников и советы для успешного прохождения собеседования.",
+
+		post5Title: "Как получить обратную связь о своём продукте?",
+		post5Description: "Узнайте, как изучать мнение пользователей, задавать правильные вопросы и собирать полезные предложения для улучшения продукта.",
+
+		post6Title: "Что такое цветовые профили и как они работают в графическом дизайне?",
+		post6Description: "Разберитесь в назначении цветовых профилей, их роли в дизайне и правильном отображении цветов на разных устройствах.",
+
+		post7Title: "Стартап: как создать команду, которая проработает вместе больше года?",
+		post7Description: "Советы по созданию сильной команды, развитию доверия между сотрудниками и построению долгосрочного сотрудничества.",
+
+		post8Title: "Как с самого начала завоевать любовь клиентов к вашему бизнесу?",
+		post8Description: "Эффективные маркетинговые методы для укрепления доверия клиентов, улучшения обслуживания и развития бизнеса.",
+		ourBlog: "НАШ БЛОГ",
+		blogJournal: "Журнал школы Createx",
+		all: "Все",
+		articles: "Статьи",
+		videos: "Видео",
+		podcasts: "Подкасты",
+		blogCategory: "Категория блога",
+		allThemes: "Все темы",
+		marketing: "Маркетинг",
+		development: "Разработка",
+		design: "Дизайн",
+		hrRecruiting: "HR и подбор персонала",
+		management: "Менеджмент",
+		searchBlog: "Поиск по блогу...",
+		developmentDescription: "Изучайте основы программирования, создавайте веб-сайты, решайте реальные задачи и развивайте практические навыки написания кода.",
+		designDescription: "Изучайте принципы креативного дизайна, работайте с цветом и типографикой, создавайте привлекательные и удобные для пользователей интерфейсы.",
+		hrDescription: "Узнайте, как находить талантливых сотрудников, проводить собеседования, поддерживать команды и создавать позитивную рабочую среду.",
+		managementDescription: "Развивайте лидерские качества, учитесь управлять командами, организовывать проекты и принимать эффективные бизнес-решения.",
+		marketingDescription: "Узнайте, как продвигать товары, понимать потребности клиентов, создавать сильные бренды и разрабатывать эффективные маркетинговые стратегии.",
+		all: "Все",
 		readyToLearn: 'НАСЛАЖДАЙТЕСЬ ОБУЧЕНИЕМ!',
 		featuredCourses: 'Наши онлайн-курсы',
 		searchCourse: 'Поиск курса...',
@@ -1137,7 +1324,6 @@ const translations = {
 		whyText6: 'Навыки, необходимые для профессий будущего.',
 		moreAboutUs: 'Подробнее о нас',
 
-		readyToLearn: 'ГОТОВЫ УЧИТЬСЯ?',
 		featuredCourses: 'Популярные курсы',
 		viewAllCourses: 'Посмотреть все курсы',
 
@@ -1330,14 +1516,9 @@ const translations = {
 		structuredDescription:
 			'Aenean urna dictum adipiscing nec, cras quisque. Nunc in mauris.',
 		professionalFeedbacks: 'Профессиональная обратная связь',
-		feedbackDescription:
-			'Culpa nostrud commodo ea consequat reprehenderit aliquip.',
 		efficiency: 'Эффективность',
-		efficiencyDescription:
-			'Viverra scelerisque consequat net. Adipisicing esse consequat.',
 		flexibleSchedule: 'Гибкий график',
-		scheduleDescription:
-			'Aute eiusmod dolore dolore deserunt veniam ad deserunt.',
+
 
 		ourMainDirections: 'Наши основные направления',
 		whatDoWeTeach: 'Чему мы обучаем',
@@ -1625,8 +1806,6 @@ const translations = {
 		workingEmail: 'Ваш рабочий email',
 		phoneNumber: 'Ваш номер телефона',
 		yourMessage: 'Ваше сообщение',
-
-		readyToLearn: 'ПРИЯТНОГО ОБУЧЕНИЯ!',
 		featuredCourses: 'Наши онлайн-курсы',
 		createxCertificate: 'СЕРТИФИКАТ CREATEX',
 		expertiseConfirmed1: 'Ваша квалификация будет подтверждена',
@@ -1692,47 +1871,64 @@ const translations = {
 	blogJournal: 'Журнал школы Createx',
 }
 
+
+
 function translate(language) {
+	if (!translations[language]) {
+		language = 'en';
+	}
+
+	// Sahifadagi barcha matnlarni tarjima qilish
 	document.querySelectorAll('[data-key]').forEach(element => {
-		const key = element.dataset.key
-		const text = translations[language]?.[key]
+		const key = element.dataset.key;
+		const translatedText = translations[language][key];
 
-		if (text !== undefined) {
-			element.textContent = text
+		if (translatedText !== undefined) {
+			element.textContent = translatedText;
 		}
-	})
+	});
 
-	// Input placeholder tarjimasi
-	document
-		.querySelectorAll('[data-placeholder], [data-key-placeholder]')
-		.forEach(element => {
-			const key = element.dataset.placeholder || element.dataset.keyPlaceholder
-			const text = translations[language]?.[key]
+	document.querySelectorAll('[data-key-placeholder], [data-placeholder]').forEach(element => {
+		const key = element.dataset.keyPlaceholder || element.dataset.placeholder;
+		const translatedText = translations[language][key];
 
-			if (text !== undefined) {
-				element.placeholder = text
-			}
-		})
+		if (translatedText !== undefined) {
+			element.placeholder = translatedText;
+		}
+	});
 
-	document.documentElement.lang = language
+	document.querySelectorAll('option[data-key]').forEach(option => {
+		const key = option.dataset.key;
+		const translatedText = translations[language][key];
+
+		if (translatedText !== undefined) {
+			option.textContent = translatedText;
+		}
+	});
+
+
+	document.documentElement.lang = language;
+
+	document.querySelectorAll('#languageSelect').forEach(select => {
+		select.value = language;
+	});
 }
 
-const select = document.getElementById('languageSelect')
 
-const savedLanguage = localStorage.getItem('language') || 'en'
+const savedLanguage = localStorage.getItem('language') || 'en';
 
-if (select) {
-	select.value = savedLanguage
 
-	translate(savedLanguage)
+document.addEventListener('DOMContentLoaded', () => {
+	translate(savedLanguage);
 
-	select.addEventListener('change', event => {
-		const language = event.target.value
 
-		localStorage.setItem('language', language)
+	document.querySelectorAll('#languageSelect').forEach(select => {
+		select.addEventListener('change', event => {
+			const language = event.target.value;
 
-		translate(language)
-	})
-} else {
-	translate(savedLanguage)
-}
+			localStorage.setItem('language', language);
+
+			translate(language);
+		});
+	});
+});
