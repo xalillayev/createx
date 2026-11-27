@@ -21,6 +21,8 @@ closeBtn.addEventListener('click', function () {
 // filter js
 
 
+// COURSES DATA
+
 
 const courses = [
     {
@@ -97,132 +99,339 @@ const courses = [
     },
 ];
 
+
+
+// TRANSLATIONS
+
+
+const courseTranslations = {
+
+    en: {
+        readyToLearn: 'ENJOY YOUR STUDYING!',
+        featuredCourses: 'Our online courses',
+        all: 'All',
+        marketing: 'Marketing',
+        management: 'Management',
+        hr: 'HR & Recruiting',
+        design: 'Design',
+        development: 'Development',
+        search: 'Search course...',
+        noResults: 'No courses found.',
+        by: 'by',
+
+        course_1: 'The Ultimate Google Ads Training Course',
+        course_2: 'Product Management Fundamentals',
+        course_3: 'HR Management and Analytics',
+        course_4: 'Brand Management & PR Communications',
+        course_5: 'Graphic Design Basic',
+        course_6: 'Business Development Management',
+        course_7: 'Highload Software Architecture',
+        course_8: 'Human Resources - Selection and Recruitment',
+        course_9: 'User Experience. Human-centered Design',
+    },
+
+    uz: {
+        readyToLearn: 'O‘QISH JARAYONIDAN ROHATLANING!',
+        featuredCourses: 'Bizning onlayn kurslarimiz',
+        all: 'Barchasi',
+        marketing: 'Marketing',
+        management: 'Menejment',
+        hr: 'HR va Rekruting',
+        design: 'Dizayn',
+        development: 'Dasturlash',
+        search: 'Kurs qidirish...',
+        noResults: 'Kurslar topilmadi.',
+        by: 'Muallif:',
+
+        course_1: 'Google Ads bo‘yicha mukammal o‘quv kursi',
+        course_2: 'Mahsulot boshqaruvi asoslari',
+        course_3: 'HR boshqaruvi va tahlil',
+        course_4: 'Brend boshqaruvi va PR kommunikatsiyalari',
+        course_5: 'Grafik dizayn asoslari',
+        course_6: 'Biznesni rivojlantirish boshqaruvi',
+        course_7: 'Highload dasturiy arxitekturasi',
+        course_8: 'Kadrlarni tanlash va ishga qabul qilish',
+        course_9: 'Foydalanuvchiga yo‘naltirilgan UX dizayn',
+    },
+
+    ru: {
+        readyToLearn: 'НАСЛАЖДАЙТЕСЬ ОБУЧЕНИЕМ!',
+        featuredCourses: 'Наши онлайн-курсы',
+        all: 'Все',
+        marketing: 'Маркетинг',
+        management: 'Менеджмент',
+        hr: 'HR и рекрутинг',
+        design: 'Дизайн',
+        development: 'Разработка',
+        search: 'Поиск курса...',
+        noResults: 'Курсы не найдены.',
+        by: 'Автор:',
+
+        course_1: 'Полный курс обучения Google Ads',
+        course_2: 'Основы управления продуктом',
+        course_3: 'Управление персоналом и аналитика',
+        course_4: 'Управление брендом и PR-коммуникации',
+        course_5: 'Основы графического дизайна',
+        course_6: 'Управление развитием бизнеса',
+        course_7: 'Архитектура высоконагруженных систем',
+        course_8: 'Подбор и найм персонала',
+        course_9: 'UX-дизайн, ориентированный на пользователя',
+    }
+
+};
+
+
+
+// ELEMENTS
+
+
 const filterButtons = document.querySelectorAll('.filter-btn');
-const box = document.querySelector('#box');
-const search = document.querySelector('#search');
-const noResults = document.querySelector('#noResults');
+const box = document.getElementById('box');
+const search = document.getElementById('search');
+const noResults = document.getElementById('noResults');
 
 let selectedCategory = 'all';
 
-// Kurslarni chiqarish
+
+
+// CURRENT LANGUAGE
+
+
+function getCourseLanguage() {
+
+    const languageSelect = document.getElementById('languageSelect');
+
+    const selectedLanguage =
+        languageSelect?.value ||
+        localStorage.getItem('language') ||
+        'en';
+
+    return courseTranslations[selectedLanguage]
+        ? selectedLanguage
+        : 'en';
+}
+
+function translateCourses() {
+
+    const lang = getCourseLanguage();
+    const texts = courseTranslations[lang];
+
+    // Static text
+    document.querySelectorAll('[data-course-key]').forEach(element => {
+
+        const key = element.dataset.courseKey;
+
+        if (texts[key] !== undefined) {
+            element.textContent = texts[key];
+        }
+
+    });
+
+    // Filter buttons
+    filterButtons.forEach(button => {
+
+        const category = button.dataset.category;
+
+        if (texts[category] !== undefined) {
+            button.textContent = texts[category];
+        }
+
+    });
+
+    // Search placeholder
+    search.placeholder = texts.search;
+
+    // Course cards
+    document.querySelectorAll('#box [data-course-key]').forEach(element => {
+
+        const key = element.dataset.courseKey;
+
+        if (texts[key] !== undefined) {
+            element.textContent = texts[key];
+        }
+        
+
+    });
+
+}
+
 function renderWorkers() {
-    const searchValue = search.value.toLowerCase().trim();
+
+    const lang = getCourseLanguage();
+    const texts = courseTranslations[lang];
+
+    const searchValue = search.value
+        .toLowerCase()
+        .trim();
 
     const filteredCourses = courses.filter(course => {
+
         const categoryMatch =
             selectedCategory === 'all' ||
             course.category === selectedCategory;
 
+        const translatedTitle = texts[`course_${course.id}`];
+
         const searchMatch =
             course.title.toLowerCase().includes(searchValue) ||
+            translatedTitle.toLowerCase().includes(searchValue) ||
             course.author.toLowerCase().includes(searchValue);
 
         return categoryMatch && searchMatch;
+
     });
 
     box.innerHTML = '';
 
-    noResults.classList.toggle('hidden', filteredCourses.length !== 0);
 
     filteredCourses.forEach(course => {
+
         const courseItem = document.createElement('div');
 
         courseItem.className = `
             bg-white shadow-md overflow-hidden
-            hover:shadow-xl transition
+            hover:shadow-xl transition duration-300
         `;
 
         courseItem.innerHTML = `
+
             <div class="h-[180px] bg-[#ffcf32] flex items-center justify-center">
+
                 <img
                     src="${course.image}"
-                    alt="${course.title}"
+                    alt="${texts[`course_${course.id}`]}"
                     class="h-full object-contain"
+                    loading="lazy"
                 >
+
             </div>
 
             <div class="p-4">
 
                 <span
-                    data-key="cat_${course.category}"
+                    data-course-key="${course.category}"
                     class="text-xs text-white bg-[#03cea4] px-2 py-1"
                 >
-                    ${course.category}
+                    ${texts[course.category]}
                 </span>
 
                 <h3
-                    data-key="course_${course.id}"
+                    data-course-key="course_${course.id}"
                     class="font-bold text-sm mt-3 mb-2"
                 >
-                    ${course.title}
+                    ${texts[`course_${course.id}`]}
                 </h3>
 
                 <p class="text-xs text-gray-500">
-                    <span class="text-[#ff4242]">$${course.price}</span>
+
+                    <span class="text-[#ff4242] font-bold">
+                        $${course.price}
+                    </span>
+
                     |
-                    <span data-key="byAuthor">by</span>
+
+                    <span data-course-key="by">
+                        ${texts.by}
+                    </span>
+
                     ${course.author}
+
                 </p>
 
             </div>
+
         `;
 
-        box.append(courseItem);
+        box.appendChild(courseItem);
+
     });
 
-    // Yangi chiqarilgan kurslarga tarjimani qo'llash
-    if (typeof applyTranslations === 'function') {
-        applyTranslations();
-    }
+    translateCourses();
+
 }
 
-// Kategoriyani almashtirish
+
+
 function handleChangeCategory(category) {
+
     selectedCategory = category;
 
     filterButtons.forEach(button => {
-        const isActive = button.dataset.category === category;
+
+        const isActive =
+            button.dataset.category === category;
 
         button.classList.toggle('bg-[#FF5753]', isActive);
         button.classList.toggle('text-white', isActive);
 
         button.classList.toggle('text-[#FF5753]', !isActive);
+
     });
 
     renderWorkers();
+
 }
 
-// HTML dagi filter tugmalariga event berish
+// FILTER BUTTON EVENTS
+
 filterButtons.forEach(button => {
+
     button.addEventListener('click', () => {
+
         handleChangeCategory(button.dataset.category);
+
     });
+
 });
 
-// Boshlang'ich render
-document.addEventListener('DOMContentLoaded', () => {
-    renderWorkers();
-});
+
+function initCourses() {
+
+    // Saqlangan tilni olish
+    const savedLanguage = localStorage.getItem('language');
+
+    if (languageSelect && savedLanguage &&
+        courseTranslations[savedLanguage]) {
+
+        languageSelect.value = savedLanguage;
+
+    }
+
+    handleChangeCategory('all');
+
+}
+
+if (document.readyState === 'loading') {
+
+    document.addEventListener('DOMContentLoaded', initCourses);
+
+} else {
+
+    initCourses();
+
+}
 
 
 
 // registr js
-const modal = document.createElement('div')
 
-modal.id = 'authModal'
+const modal = document.createElement('div');
+
+modal.id = 'authModal';
 
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`
+`;
 
 modal.innerHTML = `
     <div id="modalBox"
         class="relative bg-white w-full max-w-[400px]
         rounded-sm shadow-xl overflow-hidden">
 
-        <button id="closeModal"
+        <button id="closeModal" type="button"
+            aria-label="Close modal"
             class="absolute top-4 right-5 text-2xl
             text-gray-500 hover:text-red-500">
 
@@ -235,14 +444,12 @@ modal.innerHTML = `
 
         <div class="px-7 sm:px-8 pt-8 pb-5">
 
-            <h2 id="formTitle"
-                data-key="signIn"
+            <h2 id="formTitle" data-key="signIn"
                 class="text-2xl font-bold text-center text-[#1e212c]">
                 Sign in
             </h2>
 
-            <p id="formDescription"
-                data-key="signInDescription"
+            <p id="formDescription" data-key="signInDescription"
                 class="text-xs text-gray-400 text-center mt-5 mb-6 leading-5">
                 Sign in to your account using email and password provided during registration.
             </p>
@@ -251,12 +458,11 @@ modal.innerHTML = `
 
                 <div id="nameBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="fullNameLabel">
+                        for="fullName" data-key="fullNameLabel">
                         Full Name
                     </label>
 
-                    <input required id="fullName"
-                        type="text"
+                    <input id="fullName" type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
                         class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
@@ -264,7 +470,7 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="emailLabel">
+                        for="email" data-key="emailLabel">
                         Email
                     </label>
 
@@ -277,40 +483,41 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="passwordLabel">
+                        for="password" data-key="passwordLabel">
                         Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="password"
-                            type="password"
-                            data-placeholder="passwordPlaceholder"
-                            placeholder="Password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input required id="password"
+                        type="password"
+                        data-placeholder="passwordPlaceholder"
+                        placeholder="Password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="confirmBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="confirmPasswordLabel">
+                        for="confirmPassword" data-key="confirmPasswordLabel">
                         Confirm Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="confirmPassword"
-                            type="password"
-                            data-placeholder="confirmPasswordPlaceholder"
-                            placeholder="Confirm password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input id="confirmPassword"
+                        type="password"
+                        data-placeholder="confirmPasswordPlaceholder"
+                        placeholder="Confirm password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="rememberBox"
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input required type="checkbox" class="accent-[#ff3f22]">
-                        <span data-key="keepSignedIn">Keep me signed in</span>
+                        <input type="checkbox"
+                            id="rememberMe"
+                            class="accent-[#ff3f22]">
+
+                        <span data-key="keepSignedIn">
+                            Keep me signed in
+                        </span>
                     </label>
 
                     <button type="button" id="forgotPassword"
@@ -320,8 +527,7 @@ modal.innerHTML = `
                     </button>
                 </div>
 
-                <button id="submitBtn"
-                    type="submit"
+                <button id="submitBtn" type="submit"
                     data-key="signIn"
                     class="w-full py-3 mt-1 text-xs font-bold text-white bg-gradient-to-r from-[#ff3f22] to-[#ff5722] hover:opacity-90 transition">
                     Sign in
@@ -338,7 +544,7 @@ modal.innerHTML = `
                     Don't have an account?
                 </span>
 
-                <button id="switchBtn"
+                <button type="button" id="switchBtn"
                     class="text-[#ff3f22] hover:underline"
                     data-key="signUp">
                     Sign up
@@ -355,25 +561,21 @@ modal.innerHTML = `
                 Or sign in with
             </p>
 
-            <div class="flex items-center justify-center gap-4 text-gray-500 font-bold text-sm">
+            <div class="flex items-center justify-center gap-4">
 
-                <a href="#" aria-label="Facebook"
-                    class="hover:text-blue-600">
+                <a href="#" aria-label="Facebook">
                     <img src="pages/pages/image/Facebook.svg" alt="Facebook">
                 </a>
 
-                <a href="#" aria-label="Google"
-                    class="hover:text-red-500">
+                <a href="#" aria-label="Google">
                     <img src="pages/pages/image/Instagram.svg" alt="Google">
                 </a>
 
-                <a href="#" aria-label="Twitter"
-                    class="hover:text-blue-400">
+                <a href="#" aria-label="Twitter">
                     <img src="pages/pages/image/Twitter.svg" alt="Twitter">
                 </a>
 
-                <a href="#" aria-label="LinkedIn"
-                    class="hover:text-blue-700">
+                <a href="#" aria-label="LinkedIn">
                     <img src="pages/pages/image/Linked-In.svg" alt="LinkedIn">
                 </a>
 
@@ -382,162 +584,209 @@ modal.innerHTML = `
         </div>
 
     </div>
-`
+`;
 
-document.body.appendChild(modal)
+document.body.appendChild(modal);
 
 // ELEMENTLAR
-const closeModal = document.getElementById('closeModal')
-const formTitle = document.getElementById('formTitle')
-const formDescription = document.getElementById('formDescription')
-const authForm = document.getElementById('authForm')
-const nameBox = document.getElementById('nameBox')
-const confirmBox = document.getElementById('confirmBox')
-const fullName = document.getElementById('fullName')
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
-const rememberBox = document.getElementById('rememberBox')
-const submitBtn = document.getElementById('submitBtn')
-const switchText = document.getElementById('switchText')
-const switchBtn = document.getElementById('switchBtn')
-const message = document.getElementById('message')
 
-// TARJIMA FUNKSIYASI
+const authModal = document.getElementById('authModal');
+const closeModal = document.getElementById('closeModal');
+
+const formTitle = document.getElementById('formTitle');
+const formDescription = document.getElementById('formDescription');
+
+const authForm = document.getElementById('authForm');
+
+const nameBox = document.getElementById('nameBox');
+const confirmBox = document.getElementById('confirmBox');
+const rememberBox = document.getElementById('rememberBox');
+
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
+
+const submitBtn = document.getElementById('submitBtn');
+const switchText = document.getElementById('switchText');
+const switchBtn = document.getElementById('switchBtn');
+
+const message = document.getElementById('message');
+
+const loginBtns = document.querySelectorAll('.loginBtn');
+
+// TARJIMA
+
 function translateAuthModal() {
-	const currentLang =
-		document.getElementById('languageSelect')?.value ||
-		localStorage.getItem('language') ||
-		'en'
 
-	if (typeof translate === 'function') {
-		translate(currentLang)
-		return
-	}
+    const currentLang =
+        document.getElementById('languageSelect')?.value ||
+        localStorage.getItem('language') ||
+        'en';
 
-	document.querySelectorAll('#authModal [data-key]').forEach(element => {
-		const key = element.dataset.key
+    // Asosiy saytdagi tarjima funksiyasi
+    if (typeof window.translate === 'function') {
+        window.translate(currentLang);
+    }
 
-		if (translations?.[currentLang]?.[key]) {
-			element.textContent = translations[currentLang][key]
-		}
-	})
+    // Modal tarjimasi
+    const languageData = window.translations?.[currentLang];
 
-	document
-		.querySelectorAll('#authModal [data-placeholder]')
-		.forEach(element => {
-			const key = element.dataset.placeholder
+    if (!languageData) return;
 
-			if (translations?.[currentLang]?.[key]) {
-				element.placeholder = translations[currentLang][key]
-			}
-		})
+    authModal.querySelectorAll('[data-key]').forEach(element => {
+
+        const key = element.dataset.key;
+
+        if (languageData[key] !== undefined) {
+            element.textContent = languageData[key];
+        }
+
+    });
+
+    authModal.querySelectorAll('[data-placeholder]').forEach(element => {
+
+        const key = element.dataset.placeholder;
+
+        if (languageData[key] !== undefined) {
+            element.placeholder = languageData[key];
+        }
+
+    });
 }
 
-const authModal = document.getElementById('authModal')
 
-authModal.addEventListener('click', e => {
-	if (e.target === authModal) {
-		authModal.classList.add('hidden')
-	}
-})
 
-// MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn')
+// MODAL OCHISH
+
+function openAuthModal() {
+
+    authModal.classList.remove('hidden');
+    authModal.classList.add('flex');
+
+    updateAuthMode();
+    translateAuthModal();
+
+
+    document.getElementById('mobileMenu')?.classList.add('hidden');
+
+    document.getElementById('menuBtn')?.classList.remove('hidden');
+
+    document.getElementById('closeBtn')?.classList.add('hidden');
+}
 
 loginBtns.forEach(button => {
-	button.addEventListener('click', function () {
-		modal.classList.remove('hidden')
-		modal.classList.add('flex')
 
-		mobileMenu.classList.add('hidden')
-		menuBtn.classList.remove('hidden')
-		closeBtn.classList.add('hidden')
+    button.addEventListener('click', openAuthModal);
 
-		translateAuthModal()
-	})
-})
+});
 
-// MODAL YOPILISHI
+// MODAL YOPISH
+
 function closeAuthModal() {
-	modal.classList.add('hidden')
-	modal.classList.remove('flex')
 
-	message.textContent = ''
+    authModal.classList.add('hidden');
+    authModal.classList.remove('flex');
+
+    message.textContent = '';
+
 }
 
-closeModal.addEventListener('click', closeAuthModal)
+closeModal.addEventListener('click', closeAuthModal);
+
+// Orqa fon bosilganda yopish
+
+authModal.addEventListener('click', event => {
+
+    if (event.target === authModal) {
+        closeAuthModal();
+    }
+
+});
 
 // SIGN IN / SIGN UP
-let isSignUp = false
+
+let isSignUp = false;
 
 function updateAuthMode() {
-	message.textContent = ''
 
-	if (isSignUp) {
-		nameBox.classList.remove('hidden')
-		confirmBox.classList.remove('hidden')
+    message.textContent = '';
 
-		fullName.required = true
-		confirmPassword.required = true
+    authForm.reset();
+
+    if (isSignUp) {
 
         nameBox.classList.remove('hidden');
         confirmBox.classList.remove('hidden');
+
+        rememberBox.classList.add('hidden');
 
         fullName.required = true;
         confirmPassword.required = true;
 
         formTitle.dataset.key = 'signUp';
         formDescription.dataset.key = 'signUpDescription';
+
         submitBtn.dataset.key = 'signUp';
+
         switchText.dataset.key = 'haveAccount';
         switchBtn.dataset.key = 'signIn';
 
     } else {
 
-		formTitle.dataset.key = 'signUp'
-		formDescription.dataset.key = 'signUpDescription'
-		submitBtn.dataset.key = 'signUp'
-		switchText.dataset.key = 'haveAccount'
-		switchBtn.dataset.key = 'signIn'
-	} else {
-		nameBox.classList.add('hidden')
-		confirmBox.classList.add('hidden')
+        nameBox.classList.add('hidden');
+        confirmBox.classList.add('hidden');
 
-		fullName.required = false
-		confirmPassword.required = false
+        rememberBox.classList.remove('hidden');
+
+        fullName.required = false;
+        confirmPassword.required = false;
 
         formTitle.dataset.key = 'signIn';
         formDescription.dataset.key = 'signInDescription';
+
         submitBtn.dataset.key = 'signIn';
+
         switchText.dataset.key = 'noAccount';
         switchBtn.dataset.key = 'signUp';
 
     }
 
-		formTitle.dataset.key = 'signIn'
-		formDescription.dataset.key = 'signInDescription'
-		submitBtn.dataset.key = 'signIn'
-		switchText.dataset.key = 'noAccount'
-		switchBtn.dataset.key = 'signUp'
-	}
+    translateAuthModal();
 
-	translateAuthModal()
 }
 
-switchBtn.addEventListener('click', function () {
-	isSignUp = !isSignUp
+// Rejimni almashtirish
 
-	updateAuthMode()
-})
+switchBtn.addEventListener('click', () => {
 
-// TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('languageSelect')
+    isSignUp = !isSignUp;
+
+    updateAuthMode();
+
+});
+
+
+// TIL O'ZGARGANDA
+
+const languageSelect = document.getElementById('languageSelect');
 
 if (languageSelect) {
-	languageSelect.addEventListener('change', function () {
-		renderFilterButtons()
-		renderWorkers()
-		translateAuthModal()
-	})
+
+    languageSelect.addEventListener('change', () => {
+
+        if (typeof window.renderFilterButtons === 'function') {
+            window.renderFilterButtons();
+        }
+
+        if (typeof window.renderWorkers === 'function') {
+            window.renderWorkers();
+        }
+
+        translateAuthModal();
+
+    });
+
 }
+
+updateAuthMode();

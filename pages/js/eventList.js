@@ -282,7 +282,8 @@ modal.innerHTML = `
         class="relative bg-white w-full max-w-[400px]
         rounded-sm shadow-xl overflow-hidden">
 
-        <button id="closeModal"
+        <button id="closeModal" type="button"
+            aria-label="Close modal"
             class="absolute top-4 right-5 text-2xl
             text-gray-500 hover:text-red-500">
 
@@ -295,14 +296,12 @@ modal.innerHTML = `
 
         <div class="px-7 sm:px-8 pt-8 pb-5">
 
-            <h2 id="formTitle"
-                data-key="signIn"
+            <h2 id="formTitle" data-key="signIn"
                 class="text-2xl font-bold text-center text-[#1e212c]">
                 Sign in
             </h2>
 
-            <p id="formDescription"
-                data-key="signInDescription"
+            <p id="formDescription" data-key="signInDescription"
                 class="text-xs text-gray-400 text-center mt-5 mb-6 leading-5">
                 Sign in to your account using email and password provided during registration.
             </p>
@@ -311,12 +310,11 @@ modal.innerHTML = `
 
                 <div id="nameBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="fullNameLabel">
+                        for="fullName" data-key="fullNameLabel">
                         Full Name
                     </label>
 
-                    <input required id="fullName"
-                        type="text"
+                    <input id="fullName" type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
                         class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
@@ -324,7 +322,7 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="emailLabel">
+                        for="email" data-key="emailLabel">
                         Email
                     </label>
 
@@ -337,40 +335,41 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="passwordLabel">
+                        for="password" data-key="passwordLabel">
                         Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="password"
-                            type="password"
-                            data-placeholder="passwordPlaceholder"
-                            placeholder="Password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input required id="password"
+                        type="password"
+                        data-placeholder="passwordPlaceholder"
+                        placeholder="Password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="confirmBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="confirmPasswordLabel">
+                        for="confirmPassword" data-key="confirmPasswordLabel">
                         Confirm Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="confirmPassword"
-                            type="password"
-                            data-placeholder="confirmPasswordPlaceholder"
-                            placeholder="Confirm password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input id="confirmPassword"
+                        type="password"
+                        data-placeholder="confirmPasswordPlaceholder"
+                        placeholder="Confirm password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="rememberBox"
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input required type="checkbox" class="accent-[#ff3f22]">
-                        <span data-key="keepSignedIn">Keep me signed in</span>
+                        <input type="checkbox"
+                            id="rememberMe"
+                            class="accent-[#ff3f22]">
+
+                        <span data-key="keepSignedIn">
+                            Keep me signed in
+                        </span>
                     </label>
 
                     <button type="button" id="forgotPassword"
@@ -380,8 +379,7 @@ modal.innerHTML = `
                     </button>
                 </div>
 
-                <button id="submitBtn"
-                    type="submit"
+                <button id="submitBtn" type="submit"
                     data-key="signIn"
                     class="w-full py-3 mt-1 text-xs font-bold text-white bg-gradient-to-r from-[#ff3f22] to-[#ff5722] hover:opacity-90 transition">
                     Sign in
@@ -398,7 +396,7 @@ modal.innerHTML = `
                     Don't have an account?
                 </span>
 
-                <button id="switchBtn"
+                <button type="button" id="switchBtn"
                     class="text-[#ff3f22] hover:underline"
                     data-key="signUp">
                     Sign up
@@ -415,25 +413,21 @@ modal.innerHTML = `
                 Or sign in with
             </p>
 
-            <div class="flex items-center justify-center gap-4 text-gray-500 font-bold text-sm">
+            <div class="flex items-center justify-center gap-4">
 
-                <a href="#" aria-label="Facebook"
-                    class="hover:text-blue-600">
+                <a href="#" aria-label="Facebook">
                     <img src="pages/pages/image/Facebook.svg" alt="Facebook">
                 </a>
 
-                <a href="#" aria-label="Google"
-                    class="hover:text-red-500">
+                <a href="#" aria-label="Google">
                     <img src="pages/pages/image/Instagram.svg" alt="Google">
                 </a>
 
-                <a href="#" aria-label="Twitter"
-                    class="hover:text-blue-400">
+                <a href="#" aria-label="Twitter">
                     <img src="pages/pages/image/Twitter.svg" alt="Twitter">
                 </a>
 
-                <a href="#" aria-label="LinkedIn"
-                    class="hover:text-blue-700">
+                <a href="#" aria-label="LinkedIn">
                     <img src="pages/pages/image/Linked-In.svg" alt="LinkedIn">
                 </a>
 
@@ -446,84 +440,105 @@ modal.innerHTML = `
 
 document.body.appendChild(modal);
 
-
 // ELEMENTLAR
+
+const authModal = document.getElementById('authModal');
 const closeModal = document.getElementById('closeModal');
+
 const formTitle = document.getElementById('formTitle');
 const formDescription = document.getElementById('formDescription');
+
 const authForm = document.getElementById('authForm');
+
 const nameBox = document.getElementById('nameBox');
 const confirmBox = document.getElementById('confirmBox');
+const rememberBox = document.getElementById('rememberBox');
+
 const fullName = document.getElementById('fullName');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
-const rememberBox = document.getElementById('rememberBox');
+
 const submitBtn = document.getElementById('submitBtn');
 const switchText = document.getElementById('switchText');
 const switchBtn = document.getElementById('switchBtn');
+
 const message = document.getElementById('message');
 
+const loginBtns = document.querySelectorAll('.loginBtn');
 
-// TARJIMA FUNKSIYASI
+// TARJIMA
+
 function translateAuthModal() {
 
-    document.querySelectorAll('#authModal [data-key]').forEach(element => {
+    const currentLang =
+        document.getElementById('languageSelect')?.value ||
+        localStorage.getItem('language') ||
+        'en';
+
+    // Asosiy saytdagi tarjima funksiyasi
+    if (typeof window.translate === 'function') {
+        window.translate(currentLang);
+    }
+
+    // Modal tarjimasi
+    const languageData = window.translations?.[currentLang];
+
+    if (!languageData) return;
+
+    authModal.querySelectorAll('[data-key]').forEach(element => {
 
         const key = element.dataset.key;
 
-        if (translations[language]?.[key]) {
-            element.textContent = translations[language][key];
+        if (languageData[key] !== undefined) {
+            element.textContent = languageData[key];
         }
 
     });
 
-    document.querySelectorAll('#authModal [data-placeholder]').forEach(element => {
+    authModal.querySelectorAll('[data-placeholder]').forEach(element => {
 
         const key = element.dataset.placeholder;
 
-        if (translations[language]?.[key]) {
-            element.placeholder = translations[language][key];
+        if (languageData[key] !== undefined) {
+            element.placeholder = languageData[key];
         }
 
     });
-
 }
 
-const authModal = document.getElementById("authModal");
 
-authModal.addEventListener("click", (e) => {
-    if (e.target === authModal) {
-        authModal.classList.add("hidden");
-    }
-});
 
-// MODAL OCHILISHI
-const loginBtns = document.querySelectorAll('.loginBtn');
+// MODAL OCHISH
+
+function openAuthModal() {
+
+    authModal.classList.remove('hidden');
+    authModal.classList.add('flex');
+
+    updateAuthMode();
+    translateAuthModal();
+
+
+    document.getElementById('mobileMenu')?.classList.add('hidden');
+
+    document.getElementById('menuBtn')?.classList.remove('hidden');
+
+    document.getElementById('closeBtn')?.classList.add('hidden');
+}
 
 loginBtns.forEach(button => {
 
-    button.addEventListener('click', function () {
-
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-
-        mobileMenu.classList.add('hidden');
-        menuBtn.classList.remove('hidden');
-        closeBtn.classList.add('hidden');
-
-        translateAuthModal();
-
-    });
+    button.addEventListener('click', openAuthModal);
 
 });
 
+// MODAL YOPISH
 
-// MODAL YOPILISHI
 function closeAuthModal() {
 
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
+    authModal.classList.add('hidden');
+    authModal.classList.remove('flex');
 
     message.textContent = '';
 
@@ -531,25 +546,41 @@ function closeAuthModal() {
 
 closeModal.addEventListener('click', closeAuthModal);
 
+// Orqa fon bosilganda yopish
+
+authModal.addEventListener('click', event => {
+
+    if (event.target === authModal) {
+        closeAuthModal();
+    }
+
+});
 
 // SIGN IN / SIGN UP
+
 let isSignUp = false;
 
 function updateAuthMode() {
 
     message.textContent = '';
 
+    authForm.reset();
+
     if (isSignUp) {
 
         nameBox.classList.remove('hidden');
         confirmBox.classList.remove('hidden');
+
+        rememberBox.classList.add('hidden');
 
         fullName.required = true;
         confirmPassword.required = true;
 
         formTitle.dataset.key = 'signUp';
         formDescription.dataset.key = 'signUpDescription';
+
         submitBtn.dataset.key = 'signUp';
+
         switchText.dataset.key = 'haveAccount';
         switchBtn.dataset.key = 'signIn';
 
@@ -558,12 +589,16 @@ function updateAuthMode() {
         nameBox.classList.add('hidden');
         confirmBox.classList.add('hidden');
 
+        rememberBox.classList.remove('hidden');
+
         fullName.required = false;
         confirmPassword.required = false;
 
         formTitle.dataset.key = 'signIn';
         formDescription.dataset.key = 'signInDescription';
+
         submitBtn.dataset.key = 'signIn';
+
         switchText.dataset.key = 'noAccount';
         switchBtn.dataset.key = 'signUp';
 
@@ -573,7 +608,9 @@ function updateAuthMode() {
 
 }
 
-switchBtn.addEventListener('click', function () {
+// Rejimni almashtirish
+
+switchBtn.addEventListener('click', () => {
 
     isSignUp = !isSignUp;
 
@@ -582,15 +619,26 @@ switchBtn.addEventListener('click', function () {
 });
 
 
-// TIL O'ZGARGANDA MODALNI HAM TARJIMA QILISH
-const languageSelect = document.getElementById('language');
+// TIL O'ZGARGANDA
+
+const languageSelect = document.getElementById('languageSelect');
 
 if (languageSelect) {
 
-    languageSelect.addEventListener('change', function () {
+    languageSelect.addEventListener('change', () => {
+
+        if (typeof window.renderFilterButtons === 'function') {
+            window.renderFilterButtons();
+        }
+
+        if (typeof window.renderWorkers === 'function') {
+            window.renderWorkers();
+        }
+
         translateAuthModal();
+
     });
 
 }
 
-
+updateAuthMode();

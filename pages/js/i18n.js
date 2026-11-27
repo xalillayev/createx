@@ -64,7 +64,6 @@ const translations = {
 		hrDescription: "Iste'dodli xodimlarni topish, suhbatlar o'tkazish, jamoalarni qo'llab-quvvatlash va ijobiy ish muhitini yaratishni o'rganing.",
 		managementDescription: "Yetakchilik ko‘nikmalarini rivojlantiring, jamoalarni boshqarishni, loyihalarni tashkil etishni hamda samarali biznes qarorlarini qabul qilishni o‘rganing.",
 		marketingDescription: "Mahsulotlarni targ‘ib qilishni, mijozlar ehtiyojlarini tushunishni, kuchli brendlar yaratishni hamda samarali marketing strategiyalarini ishlab chiqishni o‘rganing.",
-		all: "Barchasi",
 		readyToLearn: 'O‘QISH JARAYONIDAN ZAVQLANING!',
 		featuredCourses: 'Bizning onlayn kurslarimiz',
 		searchCourse: 'Kursni qidirish...',
@@ -600,22 +599,7 @@ const translations = {
 		cat_all: "Barchasi",
 	},
 
-	cat_all: 'Barchasi',
-	cat_marketing: 'Marketing',
-	cat_management: 'Menejment',
-	cat_hr: 'HR va Rekruting',
-	cat_design: 'Dizayn',
-	cat_development: 'Dasturlash',
-	course_1: "Google Ads bo'yicha mukammal trening kursi",
-	course_2: 'Mahsulot menejmenti asoslari',
-	course_3: 'HR menejmenti va tahlil',
-	course_4: 'Brend menejmenti va PR kommunikatsiyalar',
-	course_5: 'Grafik dizayn asoslari',
-	course_6: 'Biznesni rivojlantirish menejmenti',
-	course_7: 'Yuqori yuklamali dasturiy arxitektura',
-	course_8: 'Inson resurslari - Tanlash va ishga olish',
-	course_9: "Foydalanuvchi tajribasi (UX). Insonga yo'naltirilgan dizayn",
-	byAuthor: 'muallif:',
+	
 
 	en: {
 		cat_development: "Development",

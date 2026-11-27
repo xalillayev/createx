@@ -16,6 +16,8 @@ if (menuBtn && closeBtn && mobileMenu) {
 	})
 }
 
+
+
 const blogPosts = [
 	{
 		type: 'podcast',
@@ -33,9 +35,9 @@ const blogPosts = [
 			uz: 'Trafik arbitraji nima va undan haqiqatan ham pul ishlash mumkinmi?',
 		},
 		description: {
-			en: 'Pharetra, ullamcorper iaculis viverra parturient sed id sed. Consequat proin dignissim lacus, purus gravida...',
-			ru: 'Узнайте, как устроена закупка трафика, какие источники работают лучше всего и как избежать слива бюджета...',
-			uz: 'Trafik sotib olish qanday ishlashi, qaysi manbalar samarali ekani va byudjetni yo‘qotmaslik yo‘llari...',
+			en: 'Learn how traffic buying works, which traffic sources are the most effective, and how to avoid wasting your advertising budget...',
+			ru: 'Узнайте, как работает закупка трафика, какие источники трафика наиболее эффективны и как избежать потери рекламного бюджета...',
+			uz: 'Trafik sotib olish qanday ishlashi, qaysi trafik manbalari samaraliroq ekani va reklama byudjetini behuda sarflamaslik yo‘llarini bilib oling...',
 		},
 		action: { en: 'Listen', ru: 'Слушать', uz: 'Tinglash' },
 		image: '/pages/pages/image/image.svg',
@@ -56,9 +58,9 @@ const blogPosts = [
 			uz: 'Yangi boshlovchi uchun birinchi dasturlash tilini qanday tanlash kerak',
 		},
 		description: {
-			en: 'Turpis sed at magna laoreet gravida consequat tortor placerat. Gravida vitae aliquet enim egestas dui...',
-			ru: 'Подробный разбор популярных языков: Python, JavaScript и C#. С чего проще начать карьеру в IT...',
-			uz: 'Mashhur tillar tahlili: Python, JavaScript va C#. IT sohasida karyerani nimadan boshlash osonroq...',
+			en: 'Analysis of Popular Programming Languages: Python, JavaScript, and C#. Which One Is Easier to Start an IT Career With?',
+			ru: 'Анализ популярных языков программирования: Python, JavaScript и C#. С какого языка легче начать карьеру в IT?',
+			uz: 'Mashhur dasturlash tillari tahlili: Python, JavaScript va C#. IT sohasidagi karyerani qaysi biridan boshlash osonroq?',
 		},
 		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
 		image: '/pages/pages/image/imge.png',
@@ -67,7 +69,11 @@ const blogPosts = [
 		type: 'video',
 		categoryKey: 'Design',
 		category: { en: 'Design', ru: 'Дизайн', uz: 'Dizayn' },
-		date: { en: 'August 8, 2020', ru: '8 августа, 2020', uz: '8-avgust, 2020' },
+		date: {
+			en: 'August 8, 2020',
+			ru: '8 августа, 2020',
+			uz: '8-avgust, 2020',
+		},
 		duration: { en: '40 min', ru: '40 мин', uz: '40 daqiqa' },
 		title: {
 			en: 'Should you choose a creative profession if you are attracted to creativity?',
@@ -75,9 +81,9 @@ const blogPosts = [
 			uz: 'Agar ijodkorlikka qiziqsangiz, kreativ kasbni tanlash kerakmi?',
 		},
 		description: {
-			en: 'Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...',
+			en: 'The pros and cons of working in creative industries, finding inspiration, and balancing creativity with deadlines...',
 			ru: 'Плюсы и минусы работы в креативных индустриях, поиск вдохновения и баланс между творчеством и дедлайнами...',
-			uz: 'Kreativ sohalarda ishlashning afzalliklari va kamchiliklari, ilhom topish hamda dedlaynlar muvozanati...',
+			uz: 'Kreativ sohalarda ishlashning afzalliklari va kamchiliklari, ilhom topish hamda ijodkorlik va muddatlar o‘rtasidagi muvozanat...',
 		},
 		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
 		image: '/pages/pages/image/imag(1).png',
@@ -90,7 +96,11 @@ const blogPosts = [
 			ru: 'HR и рекрутинг',
 			uz: 'HR va rekruting',
 		},
-		date: { en: 'August 3, 2020', ru: '3 августа, 2020', uz: '3-avgust, 2020' },
+		date: {
+			en: 'August 3, 2020',
+			ru: '3 августа, 2020',
+			uz: '3-avgust, 2020',
+		},
 		duration: { en: '', ru: '', uz: '' },
 		title: {
 			en: 'HR statistics: job search, interviews, hiring and recruiting',
@@ -98,9 +108,9 @@ const blogPosts = [
 			uz: 'HR statistikasi: ish qidirish, suhbatlar, ishga olish va rekruting',
 		},
 		description: {
-			en: 'Massa, lectus nibh consectetur aliquet nunc risus aenean. Leo hac netus bibendum diam adipiscing aenean nisl...',
+			en: 'Current labor market statistics and trends: how long does it take to find candidates and what matters most to job seekers...',
 			ru: 'Актуальные цифры и тренды рынка труда: сколько времени занимает поиск кандидатов и что важно соискателям...',
-			uz: 'Mehnat bozoridagi dolzarb raqamlar va trendlar: nomzod topish qancha vaqt oladi va nimalar muhim...',
+			uz: 'Mehnat bozoridagi dolzarb raqamlar va tendensiyalar: nomzodlarni topish qancha vaqt oladi va ish izlovchilar uchun nimalar muhim...',
 		},
 		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
 		image: '/pages/pages/image/image(s1).png',
@@ -109,7 +119,11 @@ const blogPosts = [
 		type: 'video',
 		categoryKey: 'Management',
 		category: { en: 'Management', ru: 'Менеджмент', uz: 'Menejment' },
-		date: { en: 'August 2, 2020', ru: '2 августа, 2020', uz: '2-avgust, 2020' },
+		date: {
+			en: 'August 2, 2020',
+			ru: '2 августа, 2020',
+			uz: '2-avgust, 2020',
+		},
 		duration: { en: '45 min', ru: '45 мин', uz: '45 daqiqa' },
 		title: {
 			en: 'What to do and who to talk to if you want to get feedback on the product',
@@ -117,9 +131,9 @@ const blogPosts = [
 			uz: 'Mahsulot haqida fikr-mulohaza olish uchun nima qilish va kim bilan gaplashish kerak',
 		},
 		description: {
-			en: 'Neque, a senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...',
+			en: 'How to conduct in-depth user interviews and improve a product based on real feedback...',
 			ru: 'Как правильно проводить глубинные интервью с пользователями и улучшать продукт на основе реальных отзывов...',
-			uz: 'Foydalanuvchilar bilan suhbat o‘tkazish va real fikrlar asosida mahsulotni yaxshilash usullari...',
+			uz: 'Foydalanuvchilar bilan chuqur suhbatlar o‘tkazish va haqiqiy fikr-mulohazalar asosida mahsulotni yaxshilash usullari...',
 		},
 		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
 		image: '/pages/pages/image/image.jpg',
@@ -128,7 +142,11 @@ const blogPosts = [
 		type: 'podcast',
 		categoryKey: 'Design',
 		category: { en: 'Design', ru: 'Дизайн', uz: 'Dizayn' },
-		date: { en: 'July 28, 2020', ru: '28 июля, 2020', uz: '28-iyul, 2020' },
+		date: {
+			en: 'July 28, 2020',
+			ru: '28 июля, 2020',
+			uz: '28-iyul, 2020',
+		},
 		duration: { en: '36 min', ru: '36 мин', uz: '36 daqiqa' },
 		title: {
 			en: 'What are color profiles and how they work in graphic design',
@@ -136,9 +154,9 @@ const blogPosts = [
 			uz: 'Rang profillari nima va ular grafik dizaynda qanday ishlaydi',
 		},
 		description: {
-			en: 'Aliquam vulputate hendrerit quam sollicitudin urna enim viverra gravida. Consectetur urna arcu eleifend...',
+			en: 'The difference between RGB, CMYK, and sRGB: how to adjust colors so that a design looks the same on screen and in print...',
 			ru: 'Разница между RGB, CMYK и sRGB: как настроить цвета, чтобы макет одинаково выглядел на экране и в печати...',
-			uz: 'RGB, CMYK va sRGB o‘rtasidagi farq: maket ekranda va bosmada bir xil chiqishi uchun ranglarni sozlash...',
+			uz: 'RGB, CMYK va sRGB o‘rtasidagi farq: dizayn ekranda ham, bosma nashrda ham bir xil ko‘rinishi uchun ranglarni qanday sozlash kerak...',
 		},
 		action: { en: 'Listen', ru: 'Слушать', uz: 'Tinglash' },
 		image: '/pages/pages/image/image(aa).png',
@@ -147,7 +165,11 @@ const blogPosts = [
 		type: 'video',
 		categoryKey: 'Management',
 		category: { en: 'Management', ru: 'Менеджмент', uz: 'Menejment' },
-		date: { en: 'July 15, 2020', ru: '15 июля, 2020', uz: '15-iyul, 2020' },
+		date: {
+			en: 'July 15, 2020',
+			ru: '15 июля, 2020',
+			uz: '15-iyul, 2020',
+		},
 		duration: { en: '45 min', ru: '45 мин', uz: '45 daqiqa' },
 		title: {
 			en: 'Startup: how to build a team that will live longer than a year',
@@ -155,9 +177,9 @@ const blogPosts = [
 			uz: 'Startap: bir yildan ortiq yashaydigan jamoani qanday qurish mumkin',
 		},
 		description: {
-			en: 'Nisi, massa ut sit faucibus. Faucibus at malesuada at justo scelerisque in nisi, urna...',
+			en: 'How to find like-minded people, assign roles, and stay motivated during the early stages of launching a project...',
 			ru: 'Как искать единомышленников, распределять роли и сохранять мотивацию на ранних этапах запуска проекта...',
-			uz: 'Hamfikrlarni topish, rollarni taqsimlash va loyihaning dastlabki bosqichlarida motivatsiyani saqlash...',
+			uz: 'Hamfikrlarni topish, vazifalarni taqsimlash va loyihani ishga tushirishning dastlabki bosqichlarida motivatsiyani saqlab qolish...',
 		},
 		action: { en: 'Watch', ru: 'Смотреть', uz: 'Ko‘rish' },
 		image: '/pages/pages/image/image(abd).png',
@@ -166,7 +188,11 @@ const blogPosts = [
 		type: 'article',
 		categoryKey: 'Marketing',
 		category: { en: 'Marketing', ru: 'Маркетинг', uz: 'Marketing' },
-		date: { en: 'July 9, 2020', ru: '9 июля, 2020', uz: '9-iyul, 2020' },
+		date: {
+			en: 'July 9, 2020',
+			ru: '9 июля, 2020',
+			uz: '9-iyul, 2020',
+		},
 		duration: { en: '', ru: '', uz: '' },
 		title: {
 			en: 'How to get customers to love your business from the start',
@@ -174,94 +200,81 @@ const blogPosts = [
 			uz: 'Mijozlar biznesingizni boshidanoq sevib qolishi uchun nima qilish kerak',
 		},
 		description: {
-			en: 'Malesuada in augue mi feugiat morbi a aliquet enim. Elementum lacus, pellentesque etiam arcu tristique...',
+			en: 'Customer service secrets, building trust, and creating a strong first impression of a brand...',
 			ru: 'Секреты клиентского сервиса, построение доверия и создание сильного первого впечатления о бренде...',
 			uz: 'Mijozlarga xizmat ko‘rsatish sirlari, ishonch qozonish va brend haqida kuchli birinchi taassurot qoldirish...',
 		},
 		action: { en: 'Read', ru: 'Читать', uz: 'O‘qish' },
 		image: '/pages/pages/image/image(k).png',
 	},
-]
+];
 
 const typeLabels = {
 	article: { en: 'Article', ru: 'Статья', uz: 'Maqola' },
 	video: { en: 'Video', ru: 'Видео', uz: 'Video' },
 	podcast: { en: 'Podcast', ru: 'Подкаст', uz: 'Podkast' },
-}
+};
 
-const blogGrid = document.getElementById('blogGrid')
-const blogSearch = document.getElementById('blogSearch')
-const blogCategory = document.getElementById('blogCategory')
-const blogPagination = document.getElementById('blogPagination')
-const noBlogResults = document.getElementById('noBlogResults')
-const blogTabs = document.querySelectorAll('.blog-tab')
+const blogGrid = document.getElementById('blogGrid');
+const blogSearch = document.getElementById('blogSearch');
+const blogCategory = document.getElementById('blogCategory');
+const noBlogResults = document.getElementById('noBlogResults');
+const blogTabs = document.querySelectorAll('.blog-tab');
 
-let activeType = 'all'
-let currentPage = 1
-const postsPerPage = 8
+let activeType = 'all';
 
 const typeIcons = {
 	article: 'article',
 	video: 'play_circle',
 	podcast: 'mic',
-}
+};
 
+// Tanlangan tilni aniqlash
 function getCurrentLang() {
 	const selectEl =
+		document.getElementById('languageSelect') ||
 		document.getElementById('language') ||
-		document.querySelector('select[id*="lang"]')
-	if (selectEl && selectEl.value) {
-		return selectEl.value.toLowerCase()
+		document.querySelector('select[id*="lang"]');
+
+	let lang = selectEl?.value;
+
+	if (!lang) {
+		lang =
+			localStorage.getItem('language') ||
+			localStorage.getItem('lang') ||
+			'en';
 	}
-	if (typeof language !== 'undefined' && language) {
-		return language.toLowerCase()
-	}
-	return (
-		localStorage.getItem('lang') ||
-		localStorage.getItem('language') ||
-		'en'
-	).toLowerCase()
+
+	lang = lang.toLowerCase();
+
+	return ['uz', 'ru', 'en'].includes(lang) ? lang : 'en';
 }
 
+// Faqat All Articles / Articles / Videos / Podcasts bo‘yicha ajratish
+// Search va Category filtrlariga bog‘lanmagan
 function getFilteredPosts() {
-	const lang = getCurrentLang()
-	const searchValue = blogSearch ? blogSearch.value.toLowerCase().trim() : ''
-	const categoryValue = blogCategory ? blogCategory.value : 'all'
-
 	return blogPosts.filter(post => {
-		const matchesType = activeType === 'all' || post.type === activeType
-		const matchesCategory =
-			categoryValue === 'all' || post.categoryKey === categoryValue
-
-		const titleText = (post.title[lang] || post.title.en).toLowerCase()
-		const descText = (
-			post.description[lang] || post.description.en
-		).toLowerCase()
-		const catText = (post.category[lang] || post.category.en).toLowerCase()
-
-		const matchesSearch =
-			titleText.includes(searchValue) ||
-			descText.includes(searchValue) ||
-			catText.includes(searchValue)
-
-		return matchesType && matchesCategory && matchesSearch
-	})
+		return activeType === 'all' || post.type === activeType;
+	});
 }
 
-
+// Blog kartochkasini yaratish
 function createBlogCard(post, index) {
-	const lang = getCurrentLang()
-	const card = document.createElement('article')
+	const lang = getCurrentLang();
+	const card = document.createElement('article');
 
-	const title = post.title[lang] || post.title.en
-	const category = post.category[lang] || post.category.en
-	const date = post.date[lang] || post.date.en
-	const duration = post.duration[lang] || post.duration.en
-	const description = post.description[lang] || post.description.en
-	const action = post.action[lang] || post.action.en
-	const typeText = typeLabels[post.type]?.[lang] || post.type
+	const title = post.title[lang] || post.title.en;
+	const category = post.category[lang] || post.category.en;
+	const date = post.date[lang] || post.date.en;
+	const duration = post.duration[lang] || post.duration.en;
+	const description = post.description[lang] || post.description.en;
 
-	card.className = `blog-card ${index === 3 || index === 4 ? 'wide' : ''}`
+	// Listen / Read / Watch tarjimasi
+	const action = post.action[lang] || post.action.en;
+
+	const typeText = typeLabels[post.type]?.[lang] || post.type;
+
+	card.className = `blog-card ${index === 3 || index === 4 ? 'wide' : ''}`;
 
 	card.innerHTML = `
         <div class="relative overflow-hidden rounded-sm">
@@ -271,30 +284,40 @@ function createBlogCard(post, index) {
                 class="blog-image transition duration-500 hover:scale-105"
                 loading="lazy"
             >
+
             <span class="absolute top-2 left-2 bg-white text-gray-600
                 text-[9px] px-2 py-1 rounded-sm flex items-center gap-1">
+
                 <span class="material-symbols-outlined text-[12px]">
                     ${typeIcons[post.type]}
                 </span>
+
                 ${typeText}
             </span>
         </div>
 
         <div class="blog-card-content">
+
             <div class="blog-meta">
                 <span>${category}</span>
                 <span>|</span>
-                <span class="material-symbols-outlined">calendar_today</span>
+
+                <span class="material-symbols-outlined">
+                    calendar_today
+                </span>
+
                 <span>${date}</span>
-                ${
-									duration
-										? `
-                        <span>|</span>
-                        <span class="material-symbols-outlined">schedule</span>
-                        <span>${duration}</span>
-                    `
-										: ''
-								}
+
+                ${duration
+			? `
+                            <span>|</span>
+                            <span class="material-symbols-outlined">
+                                schedule
+                            </span>
+                            <span>${duration}</span>
+                        `
+			: ''
+		}
             </div>
 
             <h3 class="blog-card-title">
@@ -307,78 +330,87 @@ function createBlogCard(post, index) {
 
             <a href="#" class="blog-action">
                 ${action}
+
                 <span class="material-symbols-outlined">
                     arrow_forward
                 </span>
             </a>
-        </div>
-    `
 
-	return card
+        </div>
+    `;
+
+	return card;
 }
 
+// Bloglarni chiqarish
 function renderBlogs() {
-	if (!blogGrid) return
+	if (!blogGrid) return;
 
-	const filteredPosts = getFilteredPosts()
-	const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
+	const filteredPosts = getFilteredPosts();
 
-	if (currentPage > totalPages) {
-		currentPage = Math.max(1, totalPages)
-	}
+	blogGrid.innerHTML = '';
 
-	const startIndex = (currentPage - 1) * postsPerPage
-	const currentPosts = filteredPosts.slice(
-		startIndex,
-		startIndex + postsPerPage,
-	)
-
-	blogGrid.innerHTML = ''
-
-	currentPosts.forEach((post, index) => {
-		blogGrid.appendChild(createBlogCard(post, index))
-	})
+	filteredPosts.forEach((post, index) => {
+		blogGrid.appendChild(createBlogCard(post, index));
+	});
 
 	if (noBlogResults) {
-		noBlogResults.classList.toggle('hidden', filteredPosts.length !== 0)
-	}
-
-	if (typeof renderPagination === 'function') {
-		renderPagination(totalPages)
+		noBlogResults.classList.toggle(
+			'hidden',
+			filteredPosts.length !== 0
+		);
 	}
 }
 
-window.renderBlogs = renderBlogs
+window.renderBlogs = renderBlogs;
 
+// Blog tab tugmalari
 blogTabs.forEach(tab => {
 	tab.addEventListener('click', () => {
-		blogTabs.forEach(item => item.classList.remove('active'))
-		tab.classList.add('active')
-		activeType = tab.dataset.type
-		currentPage = 1
-		renderBlogs()
-	})
-})
+		blogTabs.forEach(item => {
+			item.classList.remove('active');
+		});
 
-if (blogSearch) blogSearch.addEventListener('input', renderBlogs)
-if (blogCategory) blogCategory.addEventListener('change', renderBlogs)
+		tab.classList.add('active');
 
-renderBlogs()
+		activeType = tab.dataset.type;
 
-const modal = document.createElement('div')
-modal.id = 'authModal'
+		renderBlogs();
+	});
+});
+
+// Til o‘zgarganda blog kartochkalarini qayta chiqarish
+document.addEventListener('change', event => {
+	if (
+		event.target.id === 'languageSelect' ||
+		event.target.id === 'language'
+	) {
+		renderBlogs();
+	}
+});
+
+renderBlogs();
+
+
+// registr js
+
+const modal = document.createElement('div');
+
+modal.id = 'authModal';
+
 modal.className = `
     fixed inset-0 z-[100] hidden
     items-center justify-center
     bg-[#1e212c]/80 px-4 py-6
-`
+`;
 
 modal.innerHTML = `
     <div id="modalBox"
         class="relative bg-white w-full max-w-[400px]
         rounded-sm shadow-xl overflow-hidden">
 
-        <button id="closeModal"
+        <button id="closeModal" type="button"
+            aria-label="Close modal"
             class="absolute top-4 right-5 text-2xl
             text-gray-500 hover:text-red-500">
 
@@ -391,14 +423,12 @@ modal.innerHTML = `
 
         <div class="px-7 sm:px-8 pt-8 pb-5">
 
-            <h2 id="formTitle"
-                data-key="signIn"
+            <h2 id="formTitle" data-key="signIn"
                 class="text-2xl font-bold text-center text-[#1e212c]">
                 Sign in
             </h2>
 
-            <p id="formDescription"
-                data-key="signInDescription"
+            <p id="formDescription" data-key="signInDescription"
                 class="text-xs text-gray-400 text-center mt-5 mb-6 leading-5">
                 Sign in to your account using email and password provided during registration.
             </p>
@@ -407,12 +437,11 @@ modal.innerHTML = `
 
                 <div id="nameBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="fullNameLabel">
+                        for="fullName" data-key="fullNameLabel">
                         Full Name
                     </label>
 
-                    <input required id="fullName"
-                        type="text"
+                    <input id="fullName" type="text"
                         data-placeholder="yourFullName"
                         placeholder="Your full name"
                         class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
@@ -420,7 +449,7 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="emailLabel">
+                        for="email" data-key="emailLabel">
                         Email
                     </label>
 
@@ -433,40 +462,41 @@ modal.innerHTML = `
 
                 <div>
                     <label class="text-xs text-gray-700"
-                        data-key="passwordLabel">
+                        for="password" data-key="passwordLabel">
                         Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="password"
-                            type="password"
-                            data-placeholder="passwordPlaceholder"
-                            placeholder="Password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input required id="password"
+                        type="password"
+                        data-placeholder="passwordPlaceholder"
+                        placeholder="Password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="confirmBox" class="hidden">
                     <label class="text-xs text-gray-700"
-                        data-key="confirmPasswordLabel">
+                        for="confirmPassword" data-key="confirmPasswordLabel">
                         Confirm Password
                     </label>
 
-                    <div class="relative mt-2">
-                        <input required id="confirmPassword"
-                            type="password"
-                            data-placeholder="confirmPasswordPlaceholder"
-                            placeholder="Confirm password"
-                            class="w-full border border-gray-300 px-3 py-3 text-xs outline-none focus:border-orange-500 pr-10">
-                    </div>
+                    <input id="confirmPassword"
+                        type="password"
+                        data-placeholder="confirmPasswordPlaceholder"
+                        placeholder="Confirm password"
+                        class="w-full border border-gray-300 px-3 py-3 mt-2 text-xs outline-none focus:border-orange-500">
                 </div>
 
                 <div id="rememberBox"
                     class="flex items-center justify-between text-[11px]">
 
                     <label class="flex items-center gap-2">
-                        <input required type="checkbox" class="accent-[#ff3f22]">
-                        <span data-key="keepSignedIn">Keep me signed in</span>
+                        <input type="checkbox"
+                            id="rememberMe"
+                            class="accent-[#ff3f22]">
+
+                        <span data-key="keepSignedIn">
+                            Keep me signed in
+                        </span>
                     </label>
 
                     <button type="button" id="forgotPassword"
@@ -476,8 +506,7 @@ modal.innerHTML = `
                     </button>
                 </div>
 
-                <button id="submitBtn"
-                    type="submit"
+                <button id="submitBtn" type="submit"
                     data-key="signIn"
                     class="w-full py-3 mt-1 text-xs font-bold text-white bg-gradient-to-r from-[#ff3f22] to-[#ff5722] hover:opacity-90 transition">
                     Sign in
@@ -494,7 +523,7 @@ modal.innerHTML = `
                     Don't have an account?
                 </span>
 
-                <button id="switchBtn"
+                <button type="button" id="switchBtn"
                     class="text-[#ff3f22] hover:underline"
                     data-key="signUp">
                     Sign up
@@ -511,25 +540,21 @@ modal.innerHTML = `
                 Or sign in with
             </p>
 
-            <div class="flex items-center justify-center gap-4 text-gray-500 font-bold text-sm">
+            <div class="flex items-center justify-center gap-4">
 
-                <a href="#" aria-label="Facebook"
-                    class="hover:text-blue-600">
+                <a href="#" aria-label="Facebook">
                     <img src="pages/pages/image/Facebook.svg" alt="Facebook">
                 </a>
 
-                <a href="#" aria-label="Google"
-                    class="hover:text-red-500">
+                <a href="#" aria-label="Google">
                     <img src="pages/pages/image/Instagram.svg" alt="Google">
                 </a>
 
-                <a href="#" aria-label="Twitter"
-                    class="hover:text-blue-400">
+                <a href="#" aria-label="Twitter">
                     <img src="pages/pages/image/Twitter.svg" alt="Twitter">
                 </a>
 
-                <a href="#" aria-label="LinkedIn"
-                    class="hover:text-blue-700">
+                <a href="#" aria-label="LinkedIn">
                     <img src="pages/pages/image/Linked-In.svg" alt="LinkedIn">
                 </a>
 
@@ -538,147 +563,209 @@ modal.innerHTML = `
         </div>
 
     </div>
-`
+`;
 
-document.body.appendChild(modal)
+document.body.appendChild(modal);
 
-const closeModal = document.getElementById('closeModal')
-const formTitle = document.getElementById('formTitle')
-const formDescription = document.getElementById('formDescription')
-const authForm = document.getElementById('authForm')
-const nameBox = document.getElementById('nameBox')
-const confirmBox = document.getElementById('confirmBox')
-const fullName = document.getElementById('fullName')
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
-const rememberBox = document.getElementById('rememberBox')
-const submitBtn = document.getElementById('submitBtn')
-const switchText = document.getElementById('switchText')
-const switchBtn = document.getElementById('switchBtn')
-const message = document.getElementById('message')
+// ELEMENTLAR
+
+const authModal = document.getElementById('authModal');
+const closeModal = document.getElementById('closeModal');
+
+const formTitle = document.getElementById('formTitle');
+const formDescription = document.getElementById('formDescription');
+
+const authForm = document.getElementById('authForm');
+
+const nameBox = document.getElementById('nameBox');
+const confirmBox = document.getElementById('confirmBox');
+const rememberBox = document.getElementById('rememberBox');
+
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
+
+const submitBtn = document.getElementById('submitBtn');
+const switchText = document.getElementById('switchText');
+const switchBtn = document.getElementById('switchBtn');
+
+const message = document.getElementById('message');
+
+const loginBtns = document.querySelectorAll('.loginBtn');
+
+// TARJIMA
 
 function translateAuthModal() {
-	if (typeof translations === 'undefined') return
-	const currentLang = getCurrentLang()
 
-	document.querySelectorAll('#authModal [data-key]').forEach(element => {
-		const key = element.dataset.key
-		if (translations[currentLang]?.[key]) {
-			element.textContent = translations[currentLang][key]
+	const currentLang =
+		document.getElementById('languageSelect')?.value ||
+		localStorage.getItem('language') ||
+		'en';
+
+	// Asosiy saytdagi tarjima funksiyasi
+	if (typeof window.translate === 'function') {
+		window.translate(currentLang);
+	}
+
+	// Modal tarjimasi
+	const languageData = window.translations?.[currentLang];
+
+	if (!languageData) return;
+
+	authModal.querySelectorAll('[data-key]').forEach(element => {
+
+		const key = element.dataset.key;
+
+		if (languageData[key] !== undefined) {
+			element.textContent = languageData[key];
 		}
-	})
 
-	document
-		.querySelectorAll('#authModal [data-placeholder]')
-		.forEach(element => {
-			const key = element.dataset.placeholder
-			if (translations[currentLang]?.[key]) {
-				element.placeholder = translations[currentLang][key]
-			}
-		})
+	});
+
+	authModal.querySelectorAll('[data-placeholder]').forEach(element => {
+
+		const key = element.dataset.placeholder;
+
+		if (languageData[key] !== undefined) {
+			element.placeholder = languageData[key];
+		}
+
+	});
 }
 
-const authModal = document.getElementById('authModal')
 
-authModal.addEventListener('click', e => {
-	if (e.target === authModal) {
-		authModal.classList.add('hidden')
-	}
-})
 
-const loginBtns = document.querySelectorAll('.loginBtn')
+// MODAL OCHISH
+
+function openAuthModal() {
+
+	authModal.classList.remove('hidden');
+	authModal.classList.add('flex');
+
+	updateAuthMode();
+	translateAuthModal();
+
+
+	document.getElementById('mobileMenu')?.classList.add('hidden');
+
+	document.getElementById('menuBtn')?.classList.remove('hidden');
+
+	document.getElementById('closeBtn')?.classList.add('hidden');
+}
 
 loginBtns.forEach(button => {
-	button.addEventListener('click', function () {
-		modal.classList.remove('hidden')
-		modal.classList.add('flex')
 
-		if (mobileMenu) mobileMenu.classList.add('hidden')
-		if (menuBtn) menuBtn.classList.remove('hidden')
-		if (closeBtn) closeBtn.classList.add('hidden')
+	button.addEventListener('click', openAuthModal);
 
-		translateAuthModal()
-	})
-})
+});
+
+// MODAL YOPISH
 
 function closeAuthModal() {
-	modal.classList.add('hidden')
-	modal.classList.remove('flex')
-	message.textContent = ''
+
+	authModal.classList.add('hidden');
+	authModal.classList.remove('flex');
+
+	message.textContent = '';
+
 }
 
-closeModal.addEventListener('click', closeAuthModal)
+closeModal.addEventListener('click', closeAuthModal);
 
-let isSignUp = false
+// Orqa fon bosilganda yopish
 
-function updateAuthMode() {
-	message.textContent = ''
+authModal.addEventListener('click', event => {
 
-	if (isSignUp) {
-		nameBox.classList.remove('hidden')
-		confirmBox.classList.remove('hidden')
-
-		fullName.required = true
-		confirmPassword.required = true
-
-		rememberBox.innerHTML = `
-            <label class="flex items-center gap-2 text-xs">
-                <input required type="checkbox" class="accent-[#ff3f22]">
-                <span data-key="keepSignedIn"></span>
-            </label>
-        `
-
-		formTitle.dataset.key = 'signUp'
-		formDescription.dataset.key = 'signUpDescription'
-		submitBtn.dataset.key = 'signUp'
-		switchText.dataset.key = 'haveAccount'
-		switchBtn.dataset.key = 'signIn'
-	} else {
-		nameBox.classList.add('hidden')
-		confirmBox.classList.add('hidden')
-
-		fullName.required = false
-		confirmPassword.required = false
-
-		rememberBox.innerHTML = `
-            <label class="flex items-center gap-2 text-xs">
-                <input required type="checkbox" class="accent-[#ff3f22]">
-                <span data-key="keepSignedIn"></span>
-            </label>
-
-            <button type="button" id="forgotPassword"
-                class="text-[#ff3f22] hover:underline text-xs"
-                data-key="forgotPassword">
-            </button>
-        `
-
-		formTitle.dataset.key = 'signIn'
-		formDescription.dataset.key = 'signInDescription'
-		submitBtn.dataset.key = 'signIn'
-		switchText.dataset.key = 'noAccount'
-		switchBtn.dataset.key = 'signUp'
+	if (event.target === authModal) {
+		closeAuthModal();
 	}
 
-	translateAuthModal()
+});
+
+// SIGN IN / SIGN UP
+
+let isSignUp = false;
+
+function updateAuthMode() {
+
+	message.textContent = '';
+
+	authForm.reset();
+
+	if (isSignUp) {
+
+		nameBox.classList.remove('hidden');
+		confirmBox.classList.remove('hidden');
+
+		rememberBox.classList.add('hidden');
+
+		fullName.required = true;
+		confirmPassword.required = true;
+
+		formTitle.dataset.key = 'signUp';
+		formDescription.dataset.key = 'signUpDescription';
+
+		submitBtn.dataset.key = 'signUp';
+
+		switchText.dataset.key = 'haveAccount';
+		switchBtn.dataset.key = 'signIn';
+
+	} else {
+
+		nameBox.classList.add('hidden');
+		confirmBox.classList.add('hidden');
+
+		rememberBox.classList.remove('hidden');
+
+		fullName.required = false;
+		confirmPassword.required = false;
+
+		formTitle.dataset.key = 'signIn';
+		formDescription.dataset.key = 'signInDescription';
+
+		submitBtn.dataset.key = 'signIn';
+
+		switchText.dataset.key = 'noAccount';
+		switchBtn.dataset.key = 'signUp';
+
+	}
+
+	translateAuthModal();
+
 }
 
-switchBtn.addEventListener('click', function () {
-	isSignUp = !isSignUp
-	updateAuthMode()
-})
+// Rejimni almashtirish
 
-const languageSelect =
-	document.getElementById('language') ||
-	document.querySelector('select[id*="lang"]')
+switchBtn.addEventListener('click', () => {
+
+	isSignUp = !isSignUp;
+
+	updateAuthMode();
+
+});
+
+
+// TIL O'ZGARGANDA
+
+const languageSelect = document.getElementById('languageSelect');
 
 if (languageSelect) {
-	languageSelect.addEventListener('change', function () {
-		setTimeout(() => {
-			translateAuthModal()
-			renderBlogs()
-		}, 10)
-	})
+
+	languageSelect.addEventListener('change', () => {
+
+		if (typeof window.renderFilterButtons === 'function') {
+			window.renderFilterButtons();
+		}
+
+		if (typeof window.renderWorkers === 'function') {
+			window.renderWorkers();
+		}
+
+		translateAuthModal();
+
+	});
+
 }
 
-window.addEventListener('storage', renderBlogs)
+updateAuthMode();
