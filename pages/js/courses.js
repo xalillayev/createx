@@ -21,9 +21,6 @@ closeBtn.addEventListener('click', function () {
 // filter js
 
 
-// COURSES DATA
-
-
 const courses = [
     {
         id: 1,
