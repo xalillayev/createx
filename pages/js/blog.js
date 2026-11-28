@@ -328,7 +328,7 @@ function createBlogCard(post, index) {
                 ${description}
             </p>
 
-            <a href="#" class="blog-action">
+            <a href="course.html" class="blog-action">
                 ${action}
 
                 <span class="material-symbols-outlined">
